@@ -1,0 +1,68 @@
+{
+  "projet": "Outils CFTC Groupama Centre-Atlantique",
+  "auteur": "Jérôme — Représentant syndical CFTC GCA",
+  "contact": "cftc@groupama-ca.fr",
+  "base_url": "https://moi413622-cyber.github.io/cftc-gca-outils/",
+  "derniere_mise_a_jour": "2026-05-17",
+  "outils": [
+    {
+      "id": "droits-falc",
+      "nom": "Mes Droits — Guide interactif FALC",
+      "fichier": "1779017744162_cftc-gca-droits-v3-falc.html",
+      "description": "Fiches droits filtrables, langage FALC, références Code du travail. Inclut pyramide des normes (CCN Assurances, Accord Groupama, accords GCA).",
+      "themes": ["droits salariés", "Code du travail", "CCN", "FALC"],
+      "version": "v3",
+      "statut": "en ligne"
+    },
+    {
+      "id": "violentometre",
+      "nom": "Violentomètre CFTC GCA",
+      "fichier": "violentometre-cftccomplet.html",
+      "description": "Échelle visuelle pour identifier les comportements violents au travail. Actions à prendre, déclaration agression.",
+      "themes": ["incivilités", "violence au travail", "harcèlement", "agression"],
+      "version": "v1",
+      "statut": "en ligne"
+    },
+    {
+      "id": "cse-activites",
+      "nom": "Activités Sociales et Culturelles — CSE GCA",
+      "fichier": "cse-cftc.html",
+      "description": "Page des avantages CSE pour les salariés GCA. Liens vérifiés, design moderne.",
+      "themes": ["CSE", "activités sociales", "avantages salariés"],
+      "version": "v1",
+      "statut": "en ligne"
+    }
+  ],
+  "outils_hors_ligne": [
+    {
+      "id": "auto-diagnostic-cse",
+      "nom": "Auto-diagnostic CSE",
+      "description": "40 questions sur 5 thèmes CSE, scores par section, zones de remarques.",
+      "themes": ["CSE", "diagnostic", "formation"]
+    },
+    {
+      "id": "formation-cse",
+      "nom": "Formation CSE — Code du travail",
+      "description": "61 questions sur 8 thèmes, sidebar navigation, état utilisateur persistant.",
+      "themes": ["CSE", "formation", "Code du travail"]
+    },
+    {
+      "id": "ruptures-contrat",
+      "nom": "Comparatif modes de rupture de contrat",
+      "description": "PDFs A4 comparant rupture conventionnelle, licenciement, faute, inaptitude, démission.",
+      "themes": ["rupture contrat", "licenciement", "droit du travail"]
+    },
+    {
+      "id": "accord-mobilite",
+      "nom": "Carrousel Accord Mobilité Durable 2026–2028",
+      "description": "5 slides FALC : Prêt Vert, Forfait Mobilité, infrastructures. Exports JPG LinkedIn/Facebook.",
+      "themes": ["mobilité durable", "accord", "communication"]
+    },
+    {
+      "id": "historique-syndicalisme",
+      "nom": "Historique du syndicalisme",
+      "description": "Résumé FALC interactif + PPTX 9 slides histoire syndicats français.",
+      "themes": ["histoire", "syndicalisme", "FALC"]
+    }
+  ]
+}
