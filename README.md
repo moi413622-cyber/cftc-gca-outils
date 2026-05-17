@@ -14,6 +14,15 @@ Fiches filtrables, langage simple, références au Code du travail.
 
 ---
 
+## 🌡️ Violentomètre
+
+Un outil pour identifier les comportements violents au travail.  
+Échelle visuelle, langage simple, actions à prendre.
+
+👉 [Accéder à l'outil](https://moi413622-cyber.github.io/cftc-gca-outils/violentometre-cftccomplet.html)
+
+---
+
 ## 📬 Contact
 
 **Section CFTC Groupama Centre-Atlantique**  
