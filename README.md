@@ -23,7 +23,14 @@ Un outil pour identifier les comportements violents au travail.
 
 ---
 
-## 📬 Contact
+## 🎭 Activités Sociales et Culturelles — CSE GCA
 
+Les avantages CSE pour les salariés de Groupama Centre-Atlantique.
+
+👉 [Accéder à l'outil](https://moi413622-cyber.github.io/cftc-gca-outils/cse-cftc.html)
+
+---
+
+## 📬 Contact
 **Section CFTC Groupama Centre-Atlantique**  
 ✉️ cftc@groupama-ca.fr
