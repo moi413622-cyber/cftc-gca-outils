@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mes Droits — CFTC Groupama Centre Atlantique</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* ═══════════════════════════════════════════════════════
+     FALC — Facile À Lire et à Comprendre
+     Règles appliquées :
+     - Police grande, lisible, pas d'italique
+     - Interligne 1.6+
+     - Contraste fort (WCAG AA)
+     - Phrases courtes, pictogrammes explicites
+     - Boutons grands avec labels clairs
+     - Pas de MAJUSCULES longues
+     ═══════════════════════════════════════════════════════ */
+
+  :root {
+    --blue:   #0c34a1;
+    --blue2:  #1a4bbf;
+    --yellow: #F5C400;
+    --white:  #FFFFFF;
+    --bg:     #F0F4FA;
+    --text:   #1a2a4a;
+    --gray:   #4a5e80;       /* plus foncé pour meilleur contraste FALC */
+    --border: #b8ccec;
+    --radius: 18px;
+
+    /* FALC — tailles de police */
+    --falc-body:    17px;    /* min 16px recommandé FALC */
+    --falc-small:   15px;
+    --falc-h3:      18px;
+    --falc-h2:      22px;
+    --falc-h1-min:  28px;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: var(--falc-body);
+    line-height: 1.65;      /* FALC : interligne généreux */
+  }
+
+  /* HEADER — FALC : navigation lisible, boutons grands */
+  header {
+    background: var(--blue); padding: 14px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top:0; z-index:100;
+    box-shadow: 0 3px 16px rgba(0,38,84,.2);
+    border-bottom: 5px solid var(--yellow);
+  }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo-badge { background: var(--yellow); color: var(--blue); font-weight: 900; font-size: 15px; padding: 6px 12px; border-radius: 10px; }
+  .logo-name  { color: #fff; font-weight: 800; font-size: 17px; line-height: 1.3; }
+  .logo-sub   { color: rgba(255,255,255,.75); font-size: 13px; font-weight: 600; }
+  nav { display: flex; gap: 8px; flex-wrap: wrap; }
+  nav button {
+    background: rgba(255,255,255,.12); border: 2px solid rgba(255,255,255,.2); color: rgba(255,255,255,.9);
+    font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700;
+    /* FALC : min-height 44px pour accessibilité tactile */
+    padding: 10px 16px; min-height: 44px;
+    border-radius: 30px; cursor: pointer; transition: background .2s ease, color .2s ease;
+  }
+  nav button:hover  { background: rgba(255,255,255,.25); color:#fff; }
+  nav button.active { background: var(--yellow); border-color: var(--yellow); color: var(--blue); }
+
+  /* VERSION BADGE — FALC : texte lisible, pas trop petit */
+  .version-bar {
+    background: #dce8f8; border-bottom: 2px solid var(--border);
+    padding: 10px 28px; display: flex; align-items: center; gap: 12px;
+    font-size: 14px; color: #1a2a4a; font-weight: 700;
+  }
+  .version-bar span { background: var(--blue); color:#fff; padding: 4px 12px; border-radius: 20px; font-size: 13px; }
+  .version-bar em { color: var(--blue2); font-style: normal; font-weight: 800; }
+
+  /* HERO — FALC : gros texte, phrase courte, contraste fort */
+  .hero {
+    background: var(--blue2); padding: 44px 28px 50px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content:''; position:absolute; bottom:-30px; left:50%;
+    transform:translateX(-50%); width:140%; height:60px;
+    background: var(--bg); border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+  .hero-emoji { font-size: 56px; margin-bottom: 12px; display:block; animation: bounce 2s infinite; }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+
+  /* FALC : titre h1 grand et lisible */
+  .hero h1 { font-size: clamp(var(--falc-h1-min),4vw,42px); font-weight: 900; color: #fff; margin-bottom: 12px; line-height: 1.2; }
+  .hero h1 span { color: var(--yellow); }
+
+  /* FALC : description courte, contraste fort */
+  .hero p { color: rgba(255,255,255,.9); font-size: 17px; font-weight: 600; max-width: 520px; margin: 0 auto 28px; line-height: 1.5; }
+
+  /* Encadré FALC explicatif */
+  .falc-banner {
+    background: #fff3cd; border: 3px solid #F5C400; border-radius: 14px;
+    padding: 14px 20px; max-width: 600px; margin: 0 auto 20px;
+    display: flex; align-items: flex-start; gap: 12px;
+    text-align: left; position: relative; z-index: 2;
+  }
+  .falc-banner-icon { font-size: 28px; flex-shrink: 0; }
+  .falc-banner p { color: #1a2a4a; font-size: 15px; font-weight: 700; margin: 0; line-height: 1.5; }
+
+  .hero-pills { display: flex; flex-wrap:wrap; gap:10px; justify-content:center; position:relative; z-index:2; }
+  .pill {
+    background: rgba(255,255,255,.15); border: 2px solid rgba(255,255,255,.3);
+    color: #fff; font-family:'Nunito',sans-serif; font-weight: 700; font-size: 14px;
+    /* FALC : min-height 44px */
+    padding: 10px 20px; min-height: 44px;
+    border-radius: 30px; cursor: pointer;
+    display: flex; align-items: center;
+    transition: background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .pill:hover, .pill.active { background: var(--yellow); border-color: var(--yellow); color: var(--blue); }
+
+  /* SEARCH — FALC : champ large, police grande */
+  .search-wrap { max-width: 560px; margin: 36px auto 32px; padding: 0 20px; position: relative; }
+  .search-wrap input {
+    width:100%; padding: 18px 22px 18px 56px; border: 3px solid var(--border); border-radius: 50px;
+    font-family:'Nunito',sans-serif; font-size: var(--falc-body); font-weight: 600;
+    background:#fff; color:var(--text); outline:none;
+    /* FALC : min-height 56px pour accessibilité */
+    min-height: 56px;
+    transition: border-color .2s, box-shadow .2s;
+    box-shadow: 0 2px 12px rgba(0,58,112,.08);
+  }
+  .search-wrap input:focus { border-color: var(--blue2); box-shadow: 0 0 0 4px rgba(12,52,161,.15); }
+  .search-icon { position:absolute; left:40px; top:50%; transform:translateY(-50%); font-size:20px; pointer-events:none; }
+
+  /* GRID — FALC : cartes bien espacées */
+  .grid-wrap { max-width:1200px; margin:0 auto; padding:0 24px 60px; }
+  /* FALC : étiquette lisible, pas tout en majuscules */
+  .grid-label { font-size: 15px; font-weight: 800; color:var(--gray); margin-bottom:18px; text-align:center; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; }
+
+  /* CARTE — FALC : texte grand, espacement généreux */
+  .card {
+    background:#fff; border-radius:var(--radius); padding:26px 24px 22px;
+    border: 3px solid transparent; cursor:pointer; transition: border-color .2s, box-shadow .2s, transform .15s;
+    position:relative; overflow:hidden; animation: popIn .35s ease both;
+    box-shadow: 0 2px 12px rgba(0,38,112,.07);
+  }
+  @keyframes popIn { from{opacity:0;transform:scale(.94) translateY(14px)} to{opacity:1;transform:scale(1) translateY(0)} }
+  .card:nth-child(1){animation-delay:.03s} .card:nth-child(2){animation-delay:.06s} .card:nth-child(3){animation-delay:.09s}
+  .card:nth-child(4){animation-delay:.12s} .card:nth-child(5){animation-delay:.15s} .card:nth-child(6){animation-delay:.18s}
+  .card:nth-child(7){animation-delay:.21s} .card:nth-child(8){animation-delay:.24s} .card:nth-child(9){animation-delay:.27s}
+  .card:hover { border-color:var(--blue2); transform:translateY(-4px); box-shadow:0 14px 36px rgba(0,58,112,.16); }
+
+  /* Source badge */
+  .card-source {
+    position: absolute; top: 14px; right: 14px;
+    font-size: 11px; font-weight: 800;
+    padding: 4px 10px; border-radius: 6px;
+    background: #dce8f8; color: var(--blue2);
+  }
+
+  .card-top { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+  .card-emoji { width:56px; height:56px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:28px; flex-shrink:0; }
+  /* FALC : catégorie lisible, pas en majuscules seules */
+  .card-cat  { font-size: 12px; font-weight: 800; margin-bottom: 4px; }
+  /* FALC : titre h3 grand */
+  .card h3   { font-size: var(--falc-h3); font-weight: 800; line-height: 1.3; color:var(--text); }
+  /* FALC : description lisible */
+  .card-desc { font-size: var(--falc-body); color: #2a3d5e; line-height: 1.6; margin-bottom:16px; font-weight: 600; }
+  .card-footer { display:flex; align-items:center; justify-content:space-between; padding-top:12px; border-top: 2px solid var(--border); }
+  /* FALC : bouton "Voir mes droits" bien lisible */
+  .card-cta { font-size: 15px; font-weight: 800; color:var(--blue2); display:flex; align-items:center; gap:6px; }
+  .card:hover .card-cta { color:var(--blue); }
+  .card-badge { font-size: 12px; font-weight: 800; padding:5px 12px; border-radius:20px; }
+
+  /* Cat colors */
+  .card[data-cat="rem"]  { --cc:#F5C400; --ct:#7a5e00; }
+  .card[data-cat="cong"] { --cc:#93c6ff; --ct:#004a8f; }
+  .card[data-cat="sant"] { --cc:#a8f0c6; --ct:#0a6640; }
+  .card[data-cat="form"] { --cc:#d5b4f7; --ct:#5a1a99; }
+  .card[data-cat="repr"] { --cc:#ffb4b4; --ct:#8a0000; }
+  .card[data-cat="trav"] { --cc:#b4ecf7; --ct:#005a72; }
+  .card[data-cat="avantages"] { --cc:#ffd6a5; --ct:#7a3a00; }
+
+  .card .card-emoji { background: color-mix(in srgb, var(--cc) 30%, transparent); }
+  .card .card-cat   { color: var(--ct); }
+  .card .card-badge { background: color-mix(in srgb, var(--cc) 40%, white); color: var(--ct); }
+
+  /* MODAL — FALC : grand texte, contenu structuré, lisible */
+  .overlay {
+    position:fixed; inset:0; background:rgba(10,20,50,.6);
+    backdrop-filter:blur(6px); z-index:500;
+    display:flex; align-items:center; justify-content:center; padding:20px;
+    opacity:0; pointer-events:none; transition:opacity .2s;
+  }
+  .overlay.open { opacity:1; pointer-events:all; }
+  .modal {
+    background:#fff; border-radius:24px; max-width:660px; width:100%;
+    max-height:90vh; overflow-y:auto; padding:36px 32px;
+    position:relative; transform:scale(.95) translateY(16px);
+    transition:transform .3s cubic-bezier(.34,1.4,.64,1), opacity .25s ease; opacity:0;
+    box-shadow:0 24px 80px rgba(0,30,80,.22);
+  }
+  .overlay.open .modal { transform:scale(1) translateY(0); opacity:1; }
+  /* FALC : bouton fermer grand et visible */
+  .modal-close {
+    position:absolute; top:16px; right:16px; width:44px; height:44px;
+    border: none; background: #e8f0fb; border-radius:50%;
+    font-size:20px; cursor:pointer; color:var(--text);
+    display:flex; align-items:center; justify-content:center;
+    font-weight: 900; transition:background .15s;
+  }
+  .modal-close:hover { background:#c8d8f0; }
+  .modal-tag { display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:800; padding:7px 16px; border-radius:20px; margin-bottom:12px; }
+  .modal-source { display:inline-block; margin-left:8px; font-size:12px; font-weight:700; padding:5px 12px; background:#e8f0fb; color:var(--blue2); border-radius:8px; vertical-align:middle; }
+  /* FALC : titre modal grand */
+  .modal h2 { font-size: var(--falc-h2); font-weight:900; margin-bottom:14px; line-height:1.25; }
+  /* FALC : intro lisible, bonne couleur */
+  .modal-intro { font-size: var(--falc-body); color: #2a3d5e; line-height:1.7; font-weight:600; margin-bottom:22px; padding-bottom:22px; border-bottom:2px solid var(--border); }
+  /* FALC : sous-titre, pas tout en majuscules */
+  .modal h4 { font-size: 14px; font-weight:800; color: var(--blue2); margin-bottom:14px; padding: 6px 0; border-bottom: 2px solid #e8f0fb; }
+
+  /* LISTE DES DROITS — FALC : items bien lisibles */
+  .rights-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .rights-list li {
+    display:flex; gap:12px; font-size: var(--falc-body); font-weight:600; line-height:1.6;
+    color:var(--text); background:#f5f8ff; padding:14px 16px; border-radius:12px;
+    border-left: 4px solid var(--blue2);
+  }
+  /* FALC : coche visible */
+  .rights-list li::before { content:'✓'; color:var(--blue2); font-weight:900; font-size:16px; flex-shrink:0; margin-top:1px; }
+  .rights-list li.source-note { background:#fffbe6; font-size: var(--falc-small); color:#7a5e00; border-left-color: #F5C400; }
+  .rights-list li.source-note::before { content:'📄'; }
+  /* FALC : références CDT lisibles, pas en italique */
+  .rights-list li.cdt-ref { background:#eef4ff; font-size: var(--falc-small); color:#003080; border-left-color: #93c6ff; font-style: normal; }
+  .rights-list li.cdt-ref::before { content:'📖'; color:#003080; }
+  .rights-list li.norm-level { padding-left:16px; }
+  .rights-list li.norm-level::before { content:''; width:0; margin:0; }
+
+  /* PYRAMIDE */
+  .pyramid-wrap { margin: 18px 0 10px; display:flex; flex-direction:column; gap:6px; }
+  .pyramid-level { border-radius:12px; padding:12px 18px; font-size: var(--falc-small); font-weight:700; display:flex; align-items:center; gap:12px; }
+  .pyramid-level .pnum { font-size:20px; font-weight:900; flex-shrink:0; }
+  .pyr-1 { background:#0c34a1; color:#fff; }
+  .pyr-2 { background:#1a4bbf; color:#fff; }
+  .pyr-3 { background:#2e63d4; color:#fff; }
+  .pyr-4 { background:#F5C400; color:#1a2a4a; }
+  .pyr-5 { background:#fffbe6; color:#7a5e00; border:2px solid #F5C400; }
+  .pyr-sub { font-size:13px; font-weight:600; opacity:.85; margin-top:2px; }
+
+  /* CONTACT — FALC : bien lisible */
+  .contact-card { background:var(--blue); border-radius:14px; padding:18px 22px; margin-top:22px; display:flex; align-items:center; gap:16px; }
+  .contact-card .ico { font-size:28px; background:var(--yellow); width:50px; height:50px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .contact-card strong { color:#fff; font-size: var(--falc-small); font-weight:800; display:block; margin-bottom:4px; }
+  .contact-card span   { color:rgba(255,255,255,.85); font-size: var(--falc-small); font-weight:600; }
+
+  /* FOOTER — FALC : texte lisible */
+  footer { background:var(--blue); border-top:5px solid var(--yellow); text-align:center; padding:32px 20px; font-size: var(--falc-small); color:rgba(255,255,255,.75); font-weight:600; line-height: 1.8; }
+  footer strong { color:var(--yellow); }
+  footer .footer-links { display:flex; gap:20px; justify-content:center; margin-top:14px; flex-wrap: wrap; }
+  /* FALC : liens du pied de page grands */
+  footer a { color: rgba(255,255,255,.8); font-size: var(--falc-small); text-decoration:none; font-weight:800; padding: 8px 14px; border: 2px solid rgba(255,255,255,.2); border-radius: 8px; }
+  footer a:hover { color: var(--yellow); border-color: var(--yellow); }
+
+  .empty { text-align:center; padding:60px 20px; color:var(--gray); font-size: var(--falc-h3); font-weight:700; grid-column:1/-1; }
+
+
+  /* ── SIMULATEUR ABONDEMENT — FALC ── */
+  .simu-wrap { margin-top: 28px; background: #f0f4fa; border-radius: 18px; padding: 24px 20px 20px; }
+  /* FALC : titre lisible */
+  .simu-title { font-size: var(--falc-small); font-weight: 800; color: var(--blue2); margin-bottom: 18px; }
+  .simu-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+  /* FALC : onglets grands (min 44px) */
+  .simu-tab { flex:1; padding:12px 8px; border: 2px solid var(--border); border-radius:12px; background:#fff; font-family:'Nunito',sans-serif; font-size: var(--falc-small); font-weight:800; color:var(--gray); cursor:pointer; transition:all .18s; text-align:center; min-height: 44px; }
+  .simu-tab.active { background:var(--blue); border-color:var(--blue); color:#fff; }
+  .simu-tab:hover:not(.active) { border-color:var(--blue2); color:var(--blue2); }
+  .simu-slider-wrap { margin-bottom:14px; }
+  .simu-slider-label { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
+  .simu-slider-label span { font-size: var(--falc-small); font-weight:700; color:var(--text); }
+  /* FALC : valeur affichée grande */
+  .simu-slider-label strong { font-size:22px; font-weight:900; color:var(--blue); }
+  input[type=range].simu-range { width:100%; height:10px; border-radius:5px; outline:none; border:none; appearance:none; -webkit-appearance:none; background:linear-gradient(to right, var(--blue) 0%, var(--blue) var(--pct,50%), var(--border) var(--pct,50%), var(--border) 100%); cursor:pointer; }
+  input[type=range].simu-range::-webkit-slider-thumb { -webkit-appearance:none; width:28px; height:28px; border-radius:50%; background:var(--blue); border:3px solid #fff; box-shadow:0 2px 8px rgba(0,58,112,.25); cursor:pointer; }
+  .simu-result { background:var(--blue); border-radius:14px; padding:18px 18px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:14px; }
+  .simu-result-item { text-align:center; }
+  /* FALC : valeurs lisibles en grand */
+  .simu-result-item .val { font-size:20px; font-weight:900; color:#fff; display:block; }
+  .simu-result-item .lbl { font-size:12px; font-weight:700; color:rgba(255,255,255,.8); margin-top:4px; display:block; }
+  .simu-result-item.highlight .val { color:var(--yellow); font-size:24px; }
+  .simu-optim { margin-top:14px; }
+  .simu-optim-title { font-size:13px; font-weight:800; color:var(--gray); margin-bottom:8px; }
+  .simu-table { width:100%; border-collapse:collapse; font-size: var(--falc-small); background:#fff; border-radius:12px; overflow:hidden; }
+  .simu-table th { background:var(--blue2); color:#fff; padding:10px 12px; font-weight:800; text-align:right; font-size:13px; }
+  .simu-table th:first-child { text-align:left; }
+  .simu-table td { padding:10px 12px; border-bottom:1px solid var(--border); font-weight:700; color:var(--text); text-align:right; }
+  .simu-table td:first-child { text-align:left; color:var(--gray); }
+  .simu-table tr.best td { background:#fffbe6; }
+  .simu-table tr.best td:first-child { color:#7a5e00; font-weight:900; }
+  .simu-table tr.best td .star { color:#F5C400; margin-right:4px; }
+  .simu-table tr:last-child td { border-bottom:none; }
+  /* FALC : note en bas, pas en italique */
+  .simu-note { font-size:13px; color:var(--gray); font-weight:600; margin-top:10px; }
+
+  /* RESPONSIVE — FALC : texte jamais trop petit sur mobile */
+  @media(max-width:640px){
+    header { flex-wrap:wrap; gap:10px; padding:12px 16px; }
+    nav { display:none; }
+    .hero { padding:32px 16px 40px; }
+    .grid-wrap { padding:0 12px 40px; }
+    .modal { padding:24px 18px; }
+    .version-bar { padding: 8px 14px; }
+    .simu-tabs { flex-wrap: wrap; }
+    body { font-size: 16px; }
+  }
+
+  /* ── ÉCRAN DE CONNEXION — FALC ── */
+  #lockScreen {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--blue);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0;
+    animation: fadeInLock .4s ease;
+  }
+  @keyframes fadeInLock { from{opacity:0} to{opacity:1} }
+
+  .lock-card {
+    background: #fff;
+    border-radius: 24px;
+    padding: 48px 44px 40px;
+    text-align: center;
+    max-width: 400px; width: 92%;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  .lock-logo {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--blue); color: #fff;
+    padding: 10px 20px; border-radius: 12px;
+    font-weight: 900; font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .lock-logo span { background: var(--yellow); color: var(--blue); padding: 2px 8px; border-radius: 6px; font-size: 14px; }
+  .lock-subtitle { font-size: var(--falc-small); color: var(--gray); font-weight: 700; margin-bottom: 28px; }
+  .lock-icon { font-size: 48px; margin-bottom: 16px; display: block; animation: wiggle 2s infinite; }
+  @keyframes wiggle {
+    0%,100%{transform:rotate(0) scale(1)} 15%{transform:rotate(-10deg) scale(1.1)} 30%{transform:rotate(8deg) scale(1.05)} 45%{transform:rotate(-4deg)} 60%{transform:rotate(0)}
+  }
+  /* FALC : titre connexion bien lisible */
+  .lock-title { font-size: var(--falc-h2); font-weight: 900; color: var(--text); margin-bottom: 8px; }
+  .lock-desc  { font-size: var(--falc-small); color: var(--gray); font-weight: 600; margin-bottom: 24px; line-height: 1.5; }
+
+  .lock-input-wrap { position: relative; margin-bottom: 14px; }
+  .lock-input-wrap input {
+    width: 100%;
+    padding: 18px 52px 18px 22px;
+    border: 3px solid var(--border);
+    border-radius: 14px;
+    font-family: 'Nunito', sans-serif;
+    /* FALC : grande police pour le code */
+    font-size: 22px; font-weight: 800;
+    letter-spacing: 4px;
+    text-align: center;
+    color: var(--text);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+    min-height: 60px;
+  }
+  .lock-input-wrap input:focus {
+    border-color: var(--blue2);
+    box-shadow: 0 0 0 4px rgba(0,82,165,.12);
+  }
+  .lock-input-wrap input.error {
+    border-color: #e53935;
+    animation: shake .3s ease;
+  }
+  .toggle-pass {
+    position: absolute; right: 14px; top: 50%;
+    transform: translateY(-50%);
+    background: none; border: none; cursor: pointer;
+    font-size: 22px; color: var(--gray);
+  }
+  @keyframes shake {
+    0%,100%{transform:translateX(0)} 25%{transform:translateX(-6px)} 75%{transform:translateX(6px)}
+  }
+  .lock-error {
+    font-size: var(--falc-small); font-weight: 700; color: #c62828;
+    min-height: 22px; margin-bottom: 12px;
+  }
+  /* FALC : bouton connexion grand */
+  .lock-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--blue);
+    color: #fff;
+    border: none; border-radius: 14px;
+    font-family: 'Nunito', sans-serif;
+    font-size: var(--falc-body); font-weight: 800;
+    cursor: pointer;
+    transition: all .18s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 56px;
+  }
+  .lock-btn:hover { background: var(--blue2); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,58,112,.25); }
+  .lock-btn:active { transform: translateY(0); }
+  .lock-footer { margin-top: 20px; font-size: 13px; color: var(--gray); font-weight: 600; }
+
+  #lockScreen.unlocking {
+    animation: unlockAnim .55s cubic-bezier(.4,0,.2,1) forwards;
+  }
+  @keyframes unlockAnim {
+    0%   { opacity:1; transform:scale(1) translateY(0); }
+    40%  { opacity:1; transform:scale(1.04) translateY(-4px); }
+    100% { opacity:0; transform:scale(0.94) translateY(20px); pointer-events:none; }
+  }
+
+  /* ── BANDEAU FALC DANS LA PAGE ── */
+  .falc-info-bar {
+    background: #e8f4e8; border-bottom: 2px solid #2e7d32;
+    padding: 10px 28px; display: flex; align-items: center; gap: 12px;
+    font-size: 14px; color: #1b5e20; font-weight: 700;
+  }
+</style>
+
+</head>
+<body>
+
+
+
+<header>
+  <div class="logo">
+    <img src="data:image/png;base64,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" alt="CFTC Centre-Atlantique" style="height:52px;border-radius:8px;display:block;">
+    <div>
+      <div class="logo-name">Guide des droits des salariés</div>
+      <div class="logo-sub">Groupama Centre Atlantique</div>
+    </div>
+  </div>
+  <nav id="topNav">
+    <button class="active" onclick="setFilter('all',this)">📋 Tout</button>
+    <button onclick="setFilter('rem',this)">💰 Salaire</button>
+    <button onclick="setFilter('cong',this)">🏖 Congés</button>
+    <button onclick="setFilter('sant',this)">❤️ Santé</button>
+    <button onclick="setFilter('repr',this)">✊ Syndicat</button>
+    <button onclick="setFilter('form',this)">🎓 Formation</button>
+    <button onclick="setFilter('trav',this)">🏠 Télétravail</button>
+    <button onclick="setFilter('avantages',this)">🎁 Avantages</button>
+  </nav>
+</header>
+
+<div class="version-bar">
+  <span>v3.0</span>
+  Mis à jour avec <em>9 accords GCA</em> (2001–2025) + Hiérarchie des normes — Télétravail · Temps de travail · Égalité F/H · Prévoyance · GEPP · Frais pro · Mobilité durable · Mobilité groupe · Signé CFTC
+</div>
+
+<div class="falc-info-bar">
+  ♿ <strong>Ce guide est en FALC</strong> — Facile À Lire et à Comprendre. Les phrases sont courtes. Les mots sont simples.
+</div>
+
+<section class="hero">
+  <span class="hero-emoji">⚖️</span>
+  <h1>Vos droits, <span>expliqués simplement !</span></h1>
+  <p>Ce guide est basé sur de vrais accords. Il est valable chez Groupama Centre Atlantique.</p>
+
+  <div class="falc-banner">
+    <span class="falc-banner-icon">💡</span>
+    <p>Cliquez sur une carte pour lire vos droits en détail.<br>Utilisez la recherche pour trouver un sujet précis.</p>
+  </div>
+
+  <div class="hero-pills">
+    <span class="pill active" onclick="setFilterPill('all',this)">🏠 Tout afficher</span>
+    <span class="pill" onclick="setFilterPill('rem',this)">💰 Salaire</span>
+    <span class="pill" onclick="setFilterPill('cong',this)">🏖 Congés</span>
+    <span class="pill" onclick="setFilterPill('sant',this)">❤️ Santé</span>
+    <span class="pill" onclick="setFilterPill('repr',this)">✊ Syndicat</span>
+    <span class="pill" onclick="setFilterPill('trav',this)">🖥 Mobilité</span>
+    <span class="pill" onclick="setFilterPill('avantages',this)">🎁 Avantages</span>
+  </div>
+</section>
+
+<div class="search-wrap">
+  <span class="search-icon">🔍</span>
+  <input type="text" id="searchInput" placeholder="Chercher un droit… (ex : congé, télétravail)" oninput="render()">
+</div>
+
+<div class="grid-wrap">
+  <div class="grid-label" id="gridLabel"></div>
+  <div class="cards" id="cardsGrid"></div>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<section style="background:#fff;border-top:3px solid #dce8f8;padding:36px 28px;">
+  <div style="max-width:900px;margin:0 auto;">
+    <h2 style="font-size:20px;font-weight:900;color:#0c34a1;margin-bottom:20px;">📖 Lexique — Les mots expliqués</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;">
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">CCN</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Convention Collective Nationale. C'est un accord entre les syndicats et les employeurs de toute une branche (ici : les assurances).</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">AH-2001</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Accord d'Harmonisation de 2001. C'est un accord signé chez GCA qui améliore les droits prévus par la CCN.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">ANG</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Accord National Groupama de 1999. Il s'applique à toutes les entreprises du groupe Groupama.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">CSE</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Comité Social et Économique. C'est l'instance qui représente les salariés dans l'entreprise.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">CPF</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Compte Personnel de Formation. Vous cumulez des euros chaque année pour financer vos formations.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">PEE / PERCO</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Plans d'épargne salariale. Le PEE est à court terme. Le PERCO est pour la retraite. L'entreprise abonde vos versements.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">JRTT</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Jours de Réduction du Temps de Travail. Ce sont des jours de congé supplémentaires liés à votre temps de travail hebdomadaire.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">GEPP</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Gestion des Emplois et des Parcours Professionnels. C'est l'accord qui gère votre évolution de carrière chez GCA.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">IJSS</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Indemnités Journalières de la Sécurité Sociale. Ce que la Sécurité Sociale vous verse quand vous êtes malade.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">FMD</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Forfait Mobilité Durable. Une aide financière de l'entreprise si vous venez travailler à vélo, trottinette ou en covoiturage.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">DSC</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Délégué Syndical Central. Le représentant principal d'un syndicat dans l'entreprise.</p>
+      </div>
+      <div style="background:#f0f4fa;border-radius:12px;padding:14px 16px;border-left:4px solid #0c34a1;">
+        <strong style="color:#0c34a1;font-size:15px;">CDI / CDD</strong>
+        <p style="margin:4px 0 0;font-size:14px;color:#1a2a4a;line-height:1.5;">Contrat à Durée Indéterminée (sans date de fin) ou Déterminée (avec une date de fin).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="data:image/png;base64,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" alt="CFTC" style="height:44px;border-radius:8px;margin-bottom:10px;display:inline-block;"><br><strong>CFTC — Groupama Centre Atlantique</strong><br>
+  Accords en vigueur : AH 2001 · Télétravail 2025-2028 · Égalité F/H 2023 · Prévoyance 2024 · GEPP 2024 · Frais Pro 2024 · Mobilité Durable 2025 · Mobilité Groupe 2024<br>
+  CCN Sociétés d'Assurances 1992 · Accord National Groupama 1999 · <strong style="color:var(--yellow)">Intéressement 2025-2026</strong> · <strong style="color:var(--yellow)">Code du travail (mars 2026)</strong>
+  <div class="footer-links">
+    <a href="/cdn-cgi/l/email-protection#4625203225062134293336272b276b2527682034">📋 Demander les accords</a>
+    <a href="/cdn-cgi/l/email-protection#3b585d4f587b5c49544e4b5a565a16585a155d49">✉️ <span class="__cf_email__" data-cfemail="680b0e1c0b280f1a071d18090509450b09460e1a">[email&#160;protected]</span></a>
+    <a href="/cdn-cgi/l/email-protection#90f3f6e4f3d0f7e2ffe5e0f1fdf1bdf3f1bef6e2afe3e5f2faf5f3e4adc1e5f5e3e4f9fffe">❓ Poser une question</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+
+// ═══════════════════════════════════════════════════════════════
+// DONNÉES — basées sur les accords GCA du 13/04/2001
+// Enrichir avec de nouveaux accords en ajoutant des entrées ici
+// ═══════════════════════════════════════════════════════════════
+const VERSION = "3.0";
+const ACCORDS = [
+  { ref: "Accord Harmonisation 2001", short: "AH-2001" },
+  { ref: "Accord Reclassification 2001", short: "AR-2001" },
+  { ref: "CCN Assurances 1992 + Accord National Groupama 1999", short: "CCN" },
+  { ref: "Accord Intéressement GCA 2025-2026", short: "INT-2025" },
+  { ref: "Code du travail — Partie législative (maj. 01/03/2026)", short: "CDT" }
+];
+
+const data = [
+
+  // ── RÉMUNÉRATION ──────────────────────────────────────
+  {
+    id:1, cat:'rem', emoji:'🏆', cat_label:'Rémunération',
+    title:'Prime de reclassification',
+    source:'AR-2001',
+    desc:'Prime annuelle versée en janvier, évoluant chaque année selon votre ancienneté dans l\'entreprise.',
+    badge:'Spécifique GCA',
+    detail:'L\'Accord de Reclassification du 13/04/2001 (Art. 2) instaure une prime annuelle de reclassification versée avec la paie de janvier, selon l\'ancienneté. Elle est définitivement acquise à partir de la 11e année.',
+    rights:[
+      'Dès la 2e année : prime annuelle progressive, versée chaque janvier',
+      'Prime définitivement acquise à partir de la 11e année de présence',
+      'S\'applique aux salariés des classes 1 à 7 de la CCN Assurances',
+      'Bénéficie des mesures salariales d\'entreprise comme le salaire de fonction',
+      'Ancienneté groupe prise en compte pour les recrutements internes',
+      'Clause de sauvegarde : revalorisation obligatoire après 5 ans sans augmentation'
+    ],
+    contact:'Service RH GCA — Délégués CFTC — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:2, cat:'rem', emoji:'⚖️', cat_label:'Rémunération',
+    title:'Égalité salariale femmes-hommes',
+    source:'Accord Égalité 2023',
+    desc:'Engagement de réduire l\'écart salarial F/H à moins de 1%. Budget dédié aux rattrapages lors des campagnes d\'augmentation individuelles.',
+    badge:'Accord 2023',
+    detail:'L\'Accord Égalité Professionnelle (Art. 2) impose à l\'entreprise de viser un index égalité de 40/40 et de ramener l\'écart de rémunération à moins de 1%. Des budgets de rattrapage sont dédiés.',
+    rights:[
+      'Objectif : écart salarial F/H inférieur à 1% (actuellement ~1,8%)',
+      'Budget dédié aux augmentations de rattrapage pour les femmes lors des campagnes AI',
+      'Rémunération à l\'embauche strictement identique entre F et H pour un même poste',
+      'Retour de congé maternité/adoption : augmentation automatique équivalente aux AI versées en l\'absence',
+      'Index égalité F/H publié chaque année et visant 40/40',
+      'Loi Rixain : objectif 30% de chaque sexe dans les instances dirigeantes dès 2026',
+      '📖 CDT L1142-1 — Non-discrimination salariale F/H : Sous réserve des dispositions particulières du présent code, nul ne peut : 1° Mentionner ou faire me…',
+      '📖 CDT L1132-1 — Principe de non-discrimination : Aucune personne ne peut être écartée d\'une procédure de recrutement ou de nomination ou de l\'accès à…'
+    ],
+    contact:'Service RH ou Délégués CFTC — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:3, cat:'rem', emoji:'💰', cat_label:'Rémunération',
+    title:'Primes & avantages salariaux',
+    source:'AH-2001',
+    desc:'Médaille d\'honneur agricole, allocation d\'éducation élargie, prime de transport mensuelle.',
+    badge:'Avantages',
+    detail:'L\'Accord d\'Harmonisation (Art. 13-16) prévoit plusieurs primes spécifiques à GCA en complément du salaire de base, toujours en vigueur.',
+    rights:[
+      'Médaille d\'honneur agricole : primes à 20, 30, 38 et 43 ans de présence (indexées classe 3)',
+      'Allocation d\'éducation élargie aux enfants jusqu\'à 25 ans demandeurs d\'emploi',
+      'Prime de transport mensuelle de 4€ pour les salariés sans véhicule de service',
+      'Prime d\'éloignement : frais de garde pris en charge lors de missions > 24h',
+      'Réduction de 20% sur les contrats IARD Groupama (CDI uniquement)',
+      'Droits d\'entrée réduits sur les contrats Groupama Vie (voir barème)'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── CONGÉS ──────────────────────────────────────────
+  {
+    id:4, cat:'cong', emoji:'🏖', cat_label:'Congés',
+    title:'Congés payés annuels renforcés',
+    source:'AH-2001',
+    desc:'GCA accorde 27 jours ouvrés dès 1 an d\'ancienneté, soit 2 jours de plus que le légal !',
+    badge:'Essentiel',
+    detail:'L\'Art. 9 de l\'Accord d\'Harmonisation améliore significativement les congés légaux. La période de consommation court du 1er juin au 31 mai de l\'année suivante.',
+    rights:[
+      'Moins d\'1 an d\'ancienneté : 2,25 jours par mois travaillé',
+      'De 1 à 25 ans d\'ancienneté : 27 jours ouvrés par an (vs. 25 légaux)',
+      'Au-delà de 25 ans d\'ancienneté : 28 jours ouvrés par an',
+      'Fractionnement : +2 jours si ≥5 jours pris entre novembre et avril',
+      'Fractionnement : +1 jour si entre 2 et 4 jours pris entre novembre et avril',
+      'Arrêt maladie ≤ 3 mois : aucune réduction des droits à congés',
+      '📖 CDT L3141-1 — Droit au congé payé : Tout salarié a droit chaque année à un congé payé à la charge de l\'employeur.…',
+      '📖 CDT L3141-3 — Calcul : 2,5 j ouvrables/mois : Le salarié a droit à un congé de deux jours et demi ouvrables par mois de travail effectif chez le m…'
+    ],
+    contact:'Responsable RH de proximité — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:5, cat:'cong', emoji:'⏰', cat_label:'Congés',
+    title:'RTT : 18 jours par an',
+    source:'Avenant Temps Travail 2022',
+    desc:'La durée de travail est fixée à 34h30/semaine, générant 18 JRTT annuels. Certains services peuvent ouvrir le samedi matin.',
+    badge:'Accord 2022',
+    detail:'L\'Avenant à l\'accord Temps de Travail (2022) fixe la durée collective à 34h30/semaine (37h30 de référence journalière), générant 18 JRTT par an pour l\'ensemble des salariés concernés.',
+    rights:[
+      '18 JRTT attribués par an pour la durée de référence 37h30/semaine',
+      'Durée moyenne hebdomadaire fixée à 34h30 sur l\'année civile',
+      'Travail le samedi matin possible (8h30-12h30) dans certains services (GSI Auto, DAB RC)',
+      'Le samedi travaillé déclenche les règles des heures supplémentaires',
+      'Pas deux samedis consécutifs imposés — planification communiquée 1 mois à l\'avance',
+      'Délai de prévenance de 7 jours pour toute modification de planning'
+    ],
+    contact:'Responsable RH ou CSE — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:6, cat:'cong', emoji:'👨‍👩‍👧', cat_label:'Congés',
+    title:'Congés pour événements familiaux',
+    source:'AH-2001',
+    desc:'Congés spécifiques GCA : rentrée scolaire, naissances multiples, maladie d\'un proche, mariage d\'un frère/sœur.',
+    badge:'Important',
+    detail:'L\'Art. 10 de l\'Accord d\'Harmonisation accorde des congés supplémentaires pour les événements familiaux, améliorant les droits conventionnels nationaux.',
+    rights:[
+      'Naissances multiples : 6 jours (au lieu de 4 jours légaux)',
+      'Décès du conjoint : 6 jours de travail',
+      'Rentrée scolaire : 1 journée par an pour enfant(s) < 7 ans',
+      'Entrée en 6e : 1 journée par an pour enfant(s) concerné(s)',
+      'Mariage d\'un frère, sœur, beau-frère ou belle-sœur : 2 jours',
+      'Maladie du conjoint ou famille à charge : 2 jours (+1 si hospitalisation)',
+      '📖 CDT L3121-1 — Définition du temps de travail effectif : La durée du travail effectif est le temps pendant lequel le salarié est à la disposition de l\'employ…',
+      '📖 CDT L3121-27 — Durée légale : 35h/semaine : La durée légale de travail effectif des salariés à temps complet est fixée à trente-cinq heures par …'
+    ],
+    contact:'Responsable RH de proximité — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── SANTÉ / PRÉVOYANCE ───────────────────────────────
+  {
+    id:7, cat:'sant', emoji:'🏥', cat_label:'Santé & Prévoyance',
+    title:'Mutuelle complémentaire 2024',
+    source:'Accord Prévoyance 2024',
+    desc:'Adhésion obligatoire dès le 1er jour. Employeur : 60% frais de santé, 75,5% prévoyance décès. Remplace l\'accord 2001.',
+    badge:'Accord 2024',
+    detail:'L\'Accord Prévoyance 2024 remplace totalement l\'Art. 22 de l\'accord 2001. Il modernise le régime avec des taux de cotisation explicites et une Commission CFS de suivi paritaire.',
+    rights:[
+      'Adhésion obligatoire dès le 1er jour de présence (CDI ou CDD)',
+      'Frais de santé : employeur 60%, salarié 40% (taux isolé : 2,0141% PMSS)',
+      'Prévoyance décès : employeur 75,5%, salarié 24,5% — taux 0,49% SAB',
+      'Temps partiels et apprentis : employeur prend en charge la totalité si cotisation ≥ 10% salaire brut',
+      'Dispenses possibles : CSS, assurance individuelle, couverture en tant qu\'ayant droit',
+      'Commission CFS paritaire : bilan annuel des garanties et révision possible des taux',
+      'Portabilité maintenue en cas de chômage indemnisé (loi Evin)'
+    ],
+    contact:'Service RH ou Groupama Prévoyance — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:8, cat:'sant', emoji:'🌈', cat_label:'Santé & Prévoyance',
+    title:'Égalité professionnelle & non-discrimination',
+    source:'Accord Égalité 2023',
+    desc:'Accès identique à la formation, promotion et évolution, avec des objectifs de féminisation de l\'encadrement.',
+    badge:'Accord 2023',
+    detail:'L\'accord (Art. 4-6) garantit une égalité d\'accès à la promotion professionnelle et impose des objectifs concrets de mixité, notamment en faveur de la féminisation des postes d\'encadrement.',
+    rights:[
+      'Égalité d\'accès à la formation : même nombre d\'heures moyen F et H',
+      'Objectif : aucun critère de genre dans les décisions de promotion',
+      'Détection et accompagnement des profils à potentiel féminin pour les hautes fonctions',
+      'Actions de sensibilisation contre le sexisme ordinaire et les violences faites aux femmes',
+      'Aménagement de poste facilité pour les salariés RQTH (travailleur handicapé)',
+      'Signalement des discriminations : RH, CSE, ou Défenseur des Droits'
+    ],
+    contact:'RH, CSE ou Défenseur des Droits — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── TÉLÉTRAVAIL ──────────────────────────────────────
+  {
+    id:9, cat:'trav', emoji:'🏠', cat_label:'Télétravail & Conditions',
+    title:'Télétravail régulier 2025-2028',
+    source:'Accord Télétravail GCA 2025-2028',
+    desc:'Jusqu\'à 2 jours/semaine à domicile. Indemnité de 2,50 €/jour télétravaillé, exonérée de charges. Aucun quota de bénéficiaires. Accord signé par la CFTC.',
+    badge:'Art. 3 à 6 — Accord 2025',
+    detail:'L\'Accord d\'entreprise Télétravail 2025-2028 (signé le 15 juillet 2024, en vigueur au 1er janvier 2025) encadre le télétravail régulier à domicile. Il est basé sur le volontariat et la réversibilité. Aucun quota de télétravailleurs n\'est fixé. L\'éligibilité requiert un CDI, au moins 12 mois d\'ancienneté sur le poste (dérogation possible via la DRH), un taux d\'activité minimum de 80 %, une autonomie suffisante, un service compatible et un espace de travail conforme. Les alternants et CDD sont également éligibles sous conditions.',
+    rights:[
+      'Conditions : CDI + 12 mois d\'ancienneté sur le poste (dérogation DRH possible selon profil) (Annexe 1)',
+      'Taux d\'activité minimum de 80 % requis (Art. 3.1)',
+      'Jusqu\'à 2 jours/semaine pour les temps complets (présence minimale de 3 jours sur site)',
+      '1,5 jour/semaine pour les salariés à 90 % — 1 jour/semaine pour les salariés à 80 %',
+      'Indemnité de 2,50 €/jour de télétravail réalisé (exonérée charges sociales et fiscales) (Art. 3.2)',
+      '1,25 €/demi-journée pour une organisation à demi-journée par semaine (Art. 3.2)',
+      'Aucun quota de télétravailleurs fixé dans l\'entreprise (Chap. 1)',
+      'Période d\'adaptation de 3 mois (préavis 7 j) — réversibilité avec 15 jours de préavis (Art. 4.3 & 4.4)',
+      'Refus de télétravail : le manager doit motiver sa décision (Art. 4.1)',
+      'Alternants et CDD éligibles selon modalités du tuteur/maître d\'apprentissage (Art. 3.1)',
+      'Salariés en situation de handicap : demandes étudiées avec attention, mesures adaptées (Art. 4.1)',
+      'Passage formalisé par avenant au contrat de travail jusqu\'au 31 décembre 2028 (Art. 4.2)'
+    ],
+    contact:'Manager direct ou service RH — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:10, cat:'trav', emoji:'💻', cat_label:'Télétravail & Conditions',
+    title:'Télétravail occasionnel & travail mobile',
+    source:'Accord Télétravail GCA 2025-2028',
+    desc:'Télétravail ponctuel en cas de circonstances exceptionnelles (intempérie, grève, contrainte personnelle…). Travail mobile possible sur un autre site GCA. Accord signé par la CFTC.',
+    badge:'Art. 7 & 8 — Accord 2025',
+    detail:'L\'accord distingue le télétravail occasionnel (à domicile, pour circonstances inhabituelles ou imprévues) du travail mobile (sur un autre site GCA, hors domicile). Le télétravail flexible est également prévu pour les salariés non sédentaires entre deux rendez-vous. Le télétravail occasionnel ne requiert ni CDI, ni ancienneté minimale : il est ouvert à tous les salariés autonomes disposant d\'un espace de travail conforme, quel que soit leur contrat.',
+    rights:[
+      'Télétravail occasionnel ouvert à tous les salariés autonomes, sans condition de CDI ni d\'ancienneté (Art. 7)',
+      'Situations couvertes : intempérie, grève de transport, contrainte personnelle, impossibilité de se déplacer…',
+      'Demande auprès du manager — réponse motivée obligatoire (Art. 7.2.1)',
+      'Télétravail flexible pour non-sédentaires : possible par demi-journée, absence de réponse = accord (Art. 7.2.3)',
+      'Travail mobile : sur un autre site GCA (agence ou direction), régulier ou occasionnel (Art. 8)',
+      'Travail mobile régulier limité à 2 jours/semaine maximum (global avec télétravail régulier)',
+      'Équipements professionnels de l\'entreprise fournis si nécessaire (Art. 7.2.2)',
+      'Accident durant une journée de télétravail occasionnel = couvert comme accident de travail (Art. 6.3)'
+    ],
+    contact:'Manager direct ou service RH — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:25, cat:'trav', emoji:'⚖️', cat_label:'Télétravail & Conditions',
+    title:'Droits & devoirs du télétravailleur',
+    source:'Accord Télétravail GCA 2025-2028',
+    desc:'Égalité de traitement garantie. Accident à domicile = accident du travail. Droit à la déconnexion. L\'entreprise fournit et entretient tout le matériel.',
+    badge:'Art. 5 & 6 — Accord 2025',
+    detail:'Le télétravailleur conserve exactement les mêmes droits que ses collègues sur site : formation, évolution de carrière, tickets restaurant, avantages sociaux. L\'entreprise fournit, installe et entretient le matériel informatique et téléphonique. Un accident survenu à domicile pendant les plages de travail est reconnu comme accident du travail. Le droit à la déconnexion est garanti. Le télétravail s\'effectue au domicile principal (figurant sur le bulletin de paie) ou au domicile secondaire déclaré auprès de la DRH.',
+    rights:[
+      'Mêmes droits et avantages que les salariés sur site (y compris tickets restaurant) (Art. 6.1)',
+      'Aucun impact sur la carrière, la formation ou l\'évolution professionnelle (Art. 6.1)',
+      'Matériel informatique et téléphonique fourni, installé et entretenu par l\'entreprise (Art. 5.5)',
+      'Panne > demi-journée : retour sur site décidé en concertation avec le manager (Art. 5.5)',
+      'Accident à domicile pendant les plages horaires de travail = accident du travail (Art. 6.3)',
+      'Droit à la déconnexion garanti hors du temps de travail (Art. 5.2)',
+      'Charge de travail inchangée : le télétravail ne doit ni l\'augmenter ni la diminuer (Art. 5.3.2)',
+      'Point d\'étape annuel sur les conditions de télétravail (Art. 5.3.3)',
+      'Obligation : fournir une attestation multirisques habitation couvrant le télétravail (Art. 5.4)',
+      'Guide des bonnes pratiques remis au salarié et à son encadrant (Art. 6.2)',
+      'Formations dédiées au management hybride et prévention des RPS proposées (Art. 6.2)'
+    ],
+    contact:'Délégué CFTC GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── MOBILITÉ & CARRIÈRE ──────────────────────────────
+  {
+    id:11, cat:'form', emoji:'🚀', cat_label:'Carrière & Formation',
+    title:'Gestion des emplois et parcours (GEPP)',
+    source:'Accord GEPP 2024',
+    desc:'Accord triennal sur la gestion prévisionnelle des emplois : tutorat, mentorat, bilan de compétences, mobilité interne.',
+    badge:'Accord 2024',
+    detail:'L\'Accord GEPP-MM 2024 (Art. 4) offre un cadre complet pour accompagner votre développement professionnel : intégration, formation tout au long de la vie, mobilité facilitée, accompagnement des managers.',
+    rights:[
+      'Entretien professionnel bisannuel obligatoire pour faire le point sur la carrière',
+      'Tutorat et mentorat : accompagnement formalisé lors de chaque prise de poste',
+      'Bilan de compétences accessible sur demande (financement employeur ou CPF)',
+      'Accès prioritaire aux offres d\'emploi internes avant diffusion externe',
+      'Accompagnement à la prise de poste managérial : formation dédiée',
+      'Alternance et stages valorisés : dispositifs d\'accueil structurés',
+      'Accompagnement lors des changements organisationnels majeurs'
+    ],
+    contact:'Service RH GCA ou gestionnaire de carrière — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:12, cat:'form', emoji:'🌍', cat_label:'Carrière & Formation',
+    title:'Mobilité interentreprises Groupe Groupama',
+    source:'Accord Groupe Mobilité 2024',
+    desc:'Accord groupe du 16/10/2024 : cadre commun pour bouger dans tout le groupe Groupama, avec reprise d\'ancienneté et mesures d\'accompagnement.',
+    badge:'Accord Groupe 2024',
+    detail:'L\'accord Groupe du 16/10/2024 facilite la mobilité volontaire entre toutes les entités Groupama. Il garantit un socle de droits commun : ancienneté, congés, frais de déplacement et accompagnement.',
+    rights:[
+      'Mobilité volontaire entre toutes les entités du groupe Groupama',
+      'Convention tripartite : le contrat de travail initial peut être suspendu (pas rompu)',
+      'Ancienneté maintenue : reprise totale des droits acquis dans l\'entreprise d\'accueil',
+      'CPF transféré à l\'entreprise d\'accueil et abondable',
+      'Frais de transport/hébergement des entretiens de sélection pris en charge',
+      'Délai de mobilité : délai de prévenance de 2 mois maximum avant prise de poste',
+      'Délégation temporaire et National Staffing possibles (missions courtes inter-entités)'
+    ],
+    contact:'Service RH GCA ou UDSG (Unité de Développement Social Groupama) — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:13, cat:'form', emoji:'🎓', cat_label:'Carrière & Formation',
+    title:'Formation tout au long de la vie',
+    source:'Accord GEPP 2024',
+    desc:'Plan de développement des compétences, CPF, formations métiers assurance : tous les dispositifs pour évoluer.',
+    badge:'Accord 2024',
+    detail:'L\'Accord GEPP (Art. 4.4 et suivants) détaille les dispositifs de formation disponibles : plan de développement, CPF, alternance, mentoring, et dispositifs d\'évolution des compétences transverses.',
+    rights:[
+      'Plan de développement des compétences : formations prises en charge par GCA',
+      'CPF : 500€/an (750€ si non qualifié), utilisable sur moncompteformation.gouv.fr',
+      'Abondement possible par l\'employeur en cas de projet professionnel validé',
+      'Formations spécifiques aux métiers de l\'assurance (réglementaires et techniques)',
+      'Développement des compétences transverses : numérique, soft skills, management',
+      'Transmission des savoirs : dispositifs pour les seniors avant départ en retraite'
+    ],
+    contact:'Service Formation RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── REPRÉSENTATION SYNDICALE ─────────────────────────
+  {
+    id:14, cat:'repr', emoji:'✊', cat_label:'Représentation syndicale',
+    title:'Droit syndical renforcé GCA',
+    source:'AH-2001',
+    desc:'Crédit d\'heures DSC porté à 15h/mois. Frais pris en charge. Aucune entrave à l\'exercice d\'un mandat.',
+    badge:'Fondamental',
+    detail:'L\'Art. 5 de l\'Accord d\'Harmonisation reconnaît le fait syndical comme facteur de réussite. Le DSC bénéficie de 15h/mois de délégation (vs. 10h nationaux) et d\'un véhicule ou remboursement de frais.',
+    rights:[
+      'Délégué Syndical Central : crédit d\'heures porté à 15h/mois',
+      'Délégué Syndical Central : véhicule mis à disposition ou frais de déplacement remboursés',
+      'Suppléants CSE : 12h de délégation par an garanties',
+      'Réunions syndicales : 12h/an par OS par établissement (hors temps de trajet)',
+      'Tracts diffusés aux agences commerciales aux frais de l\'entreprise',
+      'Participation financière de l\'employeur à la formation économique, sociale et syndicale',
+      'Aucune discrimination liée à l\'exercice d\'un mandat — évolution de carrière garantie',
+      '📖 CDT L1222-9 — Cadre légal du télétravail : I.-Sans préjudice de l\'application, s\'il y a lieu, des dispositions du présent code protégeant les t…'
+    ],
+    contact:'✉️ <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:15, cat:'repr', emoji:'🗳️', cat_label:'Représentation syndicale',
+    title:'CSE : dotation et rôle',
+    source:'AH-2001',
+    desc:'Dotation à 1,50% de la masse salariale. Consultation obligatoire avant toute décision majeure. Poste informatique fourni.',
+    badge:'Essentiel',
+    detail:'L\'Art. 4 de l\'Accord d\'Harmonisation fixe les dotations au CSE au-delà des minimums légaux. Le CSE doit être consulté avant toute décision majeure d\'entreprise.',
+    rights:[
+      'Dotation : 1,50% de la masse salariale annuelle brute par établissement',
+      'Chaque comité doté d\'un poste bureautique complet avec consommables',
+      'Droit de vote aux élections dès 3 mois d\'ancienneté',
+      'Éligibilité dès 1 an d\'ancienneté',
+      'Consultation avant toute décision organisationnelle majeure',
+      'Bilan annuel de l\'application de l\'accord droit syndical'
+    ],
+    contact:'Élus CSE Groupama Centre Atlantique — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── MOBILITÉ DURABLE & FRAIS PRO ─────────────────────
+  {
+    id:16, cat:'avantages', emoji:'🚲', cat_label:'Mobilité durable',
+    title:'Prêt vert & forfait mobilité durable',
+    source:'Accord Mobilité Durable 2026-2028',
+    desc:'Prêt vert jusqu\'à 16 000€ à 1% sur 8 ans. Forfait mobilité durable 600€/salarié sur 2026-2028. TC pris en charge à 60%. Kit sécurité vélo 50€. Signé le 24 oct. 2025.',
+    badge:'En vigueur 01/01/2026',
+    detail:'Signé le 24 octobre 2025 par toutes les OS (CFTC — Jérôme LAURENT, CFDT, CGT, FO, CFE-CGC-SYNAPSA) et Fabrice LEPIGEON, Directeur Général de GCA. En vigueur du 01/01/2026 au 31/12/2028. Le prêt vert est réservé aux salariés titulaires (art. 35 Accord National Groupama). Le FMD est plafonné à 600 € sur toute la durée de l\'accord (non annuel) et nécessite 40 jours minimum de trajets durables justifiés. Une souplesse d\'horaires peut être accordée par le manager pour s\'adapter aux TC ou au covoiturage.',
+    rights:[
+      '🚲 Prêt vert : jusqu\'à 16 000€ à 1% sur 8 ans max (vélo, vélo élec, voiture élec/hybride/hydrogène, trottinette élec)',
+      '🔄 Transformation thermique → électrique finançable via prêt vert',
+      '⏱️ Aucun délai de carence si le nouveau prêt est un prêt vert',
+      '💶 Forfait mobilité durable (FMD) : 600€ max/salarié sur toute la période 2026-2028',
+      '📋 Conditions FMD : titulaire (≥ 6 mois), 40 jours/an justifiés, sans véhicule de service ni prise en charge TC',
+      '🚌 Abonnement TC ou vélo en libre-service : pris en charge à 60% (au-delà du légal)',
+      '🎒 Kit sécurité vélo offert : ~50€ pour tout cycliste régulier domicile-travail (toute la durée de l\'accord)',
+      '🅿️ Stationnement vélo sécurisé + casiers cyclistes dans les locaux GCA',
+      '🔌 Bornes de recharge électrique déployées selon le calendrier légal LOM',
+      '🕐 Souplesse d\'horaires possible pour s\'adapter aux TC ou au covoiturage (accord manager)'
+    ],
+    contact:'Service RH GCA (note de service sur intranet) — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:17, cat:'avantages', emoji:'🍽️', cat_label:'Avantages',
+    title:'Frais professionnels 2024',
+    source:'Accord Frais Pro 2024',
+    desc:'Remplace les Art. 17-21 de l\'accord 2001. Repas province jusqu\'à 19€/jul. 2025, hébergement 100€/nuit, IK indexées, assurance tous accidents sans franchise.',
+    badge:'En vigueur 1er juil. 2024',
+    detail:'Signé le 14 mai 2024 par toutes les OS (CFTC, CFDT, CGC, CGT, FO), cet accord remplace intégralement les articles 17 à 21 de l\'Accord d\'Harmonisation 2001. Il s\'applique à compter du 1er juillet 2024 pour une durée indéterminée. Les barèmes repas sont indexés sur le plafond URSSAF. Le déplacement doit durer au moins une demi-journée et le repas pris hors de la commune du site de rattachement. En cas de déplacement sur un site disposant d\'un restaurant d\'entreprise, celui-ci est obligatoire. Remboursement et titre-restaurant non cumulables pour le même repas.',
+    rights:[
+      '🍽️ Déjeuner province : 18€ (jul. 2024) → 18,50€ (jan. 2025) → 19€ (jul. 2025)',
+      '🍽️ Déjeuner région parisienne : 29,46€/repas',
+      '🌙 Dîner province : 20,70€ — Dîner Paris : 29,46€ (si déplacement pro)',
+      '🏨 Hébergement province : 100€/nuit (nuit + petit-déjeuner)',
+      '🏨 Hébergement région parisienne : 160€/nuit',
+      '🚗 IK véhicule ≤ 6CV fiscaux : 0,515€/km (au 1er jan. 2024)',
+      '🚗 IK véhicule > 6CV fiscaux : 0,557€/km — indexé barème fiscal',
+      '🛡️ Assurance multi-risques SANS FRANCHISE sur véhicule perso en déplacement pro',
+      '💰 Avance sur frais 300€ maintenue pour les salariés commerciaux historiques',
+      '📋 Visa hiérarchique obligatoire + justificatifs pour tout remboursement'
+    ],
+    contact:'Service RH GCA (note de service dédiée sur intranet) — <a href=\"mailto:cftc@groupama-ca.fr\" style=\"color:#F5C400;font-weight:800;\">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:18, cat:'avantages', emoji:'🏠', cat_label:'Avantages',
+    title:'Prêts immobiliers & personnels préférentiels',
+    source:'AH-2001',
+    desc:'Prêts à taux réduit pour l\'acquisition ou travaux de votre résidence principale, et prêts personnels avantageux.',
+    badge:'Avantage exclusif',
+    detail:'L\'Art. 24-25 de l\'Accord d\'Harmonisation ouvre l\'accès à des prêts à taux préférentiel (taux marché moins 4 points), sans frais de dossier, pour les salariés titulaires.',
+    rights:[
+      '1ère acquisition/divorce : prêt jusqu\'à ~15 245€ sur 15 ans max. à taux réduit',
+      'Travaux d\'amélioration : prêt jusqu\'à ~6 098€ sur 7 ans max.',
+      'Prêt personnel : jusqu\'à ~6 098€ sur 5 ans, taux 4 pts en dessous du marché',
+      'Aucuns frais de constitution de dossier',
+      'Enveloppe logement plafonnée à 1,5% de la masse salariale annuelle brute',
+      'Taux révisé chaque fin d\'année civile avec les partenaires sociaux'
+    ],
+    contact:'Service RH GCA ou organisme collecteur — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── CCN FFSA 1992 ────────────────────────────────────────
+  {
+    id:19, cat:'cong', emoji:'🤱', cat_label:'Congés',
+    title:'Maternité & congé parental',
+    source:'CCN Assurances 1992',
+    desc:'Réduction horaire dès la déclaration de grossesse. Congé parental de plein droit jusqu\'aux 3 ans de l\'enfant, sans condition d\'effectif.',
+    badge:'Art. 86 CCN',
+    detail:'La CCN prévoit une réduction de la durée quotidienne du travail dès la déclaration de grossesse. Le congé parental d\'éducation est accessible de plein droit, sans minimum d\'effectif dans l\'entreprise. Il peut être pris en suspension totale ou temps partiel. À l\'expiration, le salarié retrouve son emploi ou un emploi similaire avec conservation de tous les droits acquis. La durée du congé parental est assimilée à du temps de présence pour les avantages liés à l\'ancienneté.',
+    rights:[
+      'Réduction horaire journalière dès déclaration de grossesse',
+      'Congé parental de plein droit (sans condition d\'effectif)',
+      'Durée : jusqu\'à 3 ans après naissance ou adoption',
+      'Forme : suspension totale, temps partiel ou combinaison',
+      'Reprise anticipée de droit si décès de l\'enfant',
+      'Emploi garanti au retour (même poste ou similaire)',
+      'Droits d\'ancienneté conservés pendant le congé',
+      '📖 CDT L1225-1 — Protection grossesse — embauche : L\'employeur ne doit pas prendre en considération l\'état de grossesse d\'une femme pour refuser de l\'e…',
+      '📖 CDT L1225-4 — Protection grossesse — licenciement : Aucun employeur ne peut rompre le contrat de travail d\'une salariée lorsqu\'elle est en état de gross…'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:20, cat:'sant', emoji:'🏥', cat_label:'Santé',
+    title:'Maintien de salaire maladie',
+    source:'CCN Assurances 1992',
+    desc:'En cas d\'arrêt maladie, l\'employeur complète les indemnités journalières SS jusqu\'à concurrence du salaire net. Protection contre le licenciement pendant 9 mois.',
+    badge:'Art. 82-83 CCN',
+    detail:'La CCN garantit un maintien de salaire en cas d\'arrêt maladie : l\'employeur verse une allocation complémentaire qui, additionnée aux indemnités journalières de la Sécurité Sociale, atteint 100 % du salaire net mensuel. La maladie ne constitue pas en elle-même un motif de licenciement. Un licenciement pour absence ne peut intervenir qu\'après 9 mois d\'absence continue ou non sur 12 mois, et seulement si le remplacement est indispensable.',
+    rights:[
+      'Maintien à 100 % du salaire net pendant l\'arrêt maladie',
+      'Complément employeur = salaire net - IJSS versées',
+      'La maladie seule n\'est PAS un motif de licenciement',
+      'Protection : aucun licenciement avant 9 mois d\'absence',
+      '9 mois continus ou non sur une période de 12 mois',
+      'Licenciement uniquement si remplacement impératif',
+      '3 jours/an autorisés pour maladie d\'enfant < 12 ans'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:21, cat:'rem', emoji:'📊', cat_label:'Rémunération',
+    title:'Classification & rémunérations minimales',
+    source:'CCN Assurances 1992',
+    desc:'7 classes de fonctions avec rémunérations minimales annuelles (RMA) garanties. La prime d\'expérience s\'acquiert automatiquement selon l\'ancienneté dans chaque classe.',
+    badge:'Art. 30-34 CCN',
+    detail:'La CCN établit un système de classification en 7 classes (1 à 7) basé sur 5 critères : formation/expérience, technicité, dimension relationnelle, autonomie, contribution. Chaque classe ouvre droit à une Rémunération Minimale Annuelle (RMA) garantie. Une prime d\'expérience s\'accumule automatiquement avec les années passées dans chaque classe. Les RMA sont renégociées chaque année en commission paritaire (décembre-février). Toute promotion de classe entraîne un réajustement automatique de la RMA.',
+    rights:[
+      '7 classes de fonctions (1 = employé, 7 = cadre dirigeant)',
+      'RMA garantie pour chaque classe, révisée annuellement',
+      'Prime d\'expérience automatique liée à l\'ancienneté de classe',
+      'Promotion → réajustement immédiat à la RMA de la nouvelle classe',
+      'Négociation paritaire annuelle des RMA (déc.–fév.)',
+      'Classification basée sur 5 critères objectifs',
+      'Égalité F/H garantie dans l\'application des critères'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:22, cat:'cong', emoji:'⏰', cat_label:'Congés',
+    title:'Temps de travail & heures supplémentaires',
+    source:'CCN Assurances 1992',
+    desc:'26 jours ouvrés de congés payés minimum. Les heures supplémentaires au-delà de la durée légale donnent droit à majoration de salaire ET repos compensateur.',
+    badge:'Art. 36-46 CCN',
+    detail:'La CCN fixe un minimum de 26 jours ouvrés de congés payés pour 12 mois de présence (contre 25 légaux). Pour les cadres, 2 jours supplémentaires s\'ajoutent. Les heures supplémentaires au-delà de la durée légale ouvrent droit à majoration de salaire ET à un repos compensateur cumulable. Le contingent conventionnel d\'heures supplémentaires est fixé par accord. La programmation annuelle du temps de travail est obligatoirement communiquée aux représentants syndicaux.',
+    rights:[
+      '26 jours ouvrés de congés payés minimum (25 légaux)',
+      'Cadres : 28 jours ouvrés minimum (+2 jours CCN)',
+      'Heures sup. au-delà légal : majoration + repos compensateur',
+      'Contingent conventionnel d\'heures supplémentaires',
+      'Programmation annuelle communiquée aux syndicats',
+      'Travail de nuit, dimanche ou férié : compensations spécifiques',
+      'Modulation possible mais avec contrepartie obligatoire',
+      '📖 CDT L6321-1 — Obligation de l\'employeur en matière de formation : L\'employeur assure l\'adaptation des salariés à leur poste de travail. Il veille au maintien de leur …'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:23, cat:'avantages', emoji:'🎓', cat_label:'Avantages',
+    title:'Diplômes & gratification formation',
+    source:'CCN Assurances 1992',
+    desc:'Les salariés qui obtiennent un diplôme d\'assurance ou interprofessionnel (compta, bureautique...) dans le cadre du plan de formation bénéficient d\'une gratification et d\'un examen de carrière.',
+    badge:'Art. 64-65 CCN',
+    detail:'La CCN prévoit une gratification financière pour tout salarié obtenant un diplôme d\'assurance (ENAs, AEA) ou un diplôme interprofessionnel homologué (comptabilité, bureautique, etc.). L\'employeur doit accorder les autorisations d\'absence pour préparer les examens. Lorsqu\'un diplôme est obtenu dans le cadre du plan de formation, la situation du salarié fait l\'objet d\'un examen particulier de carrière par le responsable hiérarchique. Les entreprises donnent priorité aux candidats ayant suivi le cursus de formation correspondant aux postes ouverts.',
+    rights:[
+      'Gratification financière pour tout diplôme assurance ou homologué',
+      'Autorisations d\'absence accordées pour préparer les examens',
+      'Examen de carrière systématique après obtention d\'un diplôme',
+      'Priorité d\'accès aux postes pour les salariés diplômés',
+      'Capital Temps-Formation pour salariés peu qualifiés',
+      'Frais de formation pris en charge par l\'employeur (plan)',
+      'Commission de formation informée des difficultés d\'accès'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:24, cat:'repr', emoji:'⚖️', cat_label:'Représentation',
+    title:'Licenciement : procédure & indemnités',
+    source:'CCN Assurances 1992',
+    desc:'Préavis de 1 à 2 mois selon ancienneté. Indemnité de licenciement de 2 % à 4 % par année, majorée de 0,5 % si ≥ 50 ans. Procédure de conseil de discipline obligatoire.',
+    badge:'Art. 90-92 CCN',
+    detail:'La CCN renforce les protections légales en matière de licenciement. Le préavis est d\'1 mois (classes 1-4) ou 2 mois si ≥ 2 ans d\'ancienneté. L\'indemnité conventionnelle dépasse l\'indemnité légale : 2 % par année jusqu\'à 10 ans, 3 % de 10 à 20 ans, 3,5 % de 20 à 30 ans, 4 % au-delà. Majoration de 0,5 %/an si le salarié a 50 ans ou plus. En cas de faute, un Conseil de discipline paritaire doit être réuni. La priorité de réembauchage est valable 4 mois après le départ.',
+    rights:[
+      'Préavis : 1 mois (classes 1-4), 2 mois si ≥ 2 ans d\'ancienneté',
+      'Indemnité : 2 % / an (≤10 ans), 3 % (10-20 ans), 4 % (>30 ans)',
+      'Majoration +0,5 %/an si salarié ≥ 50 ans',
+      'Conseil de discipline paritaire obligatoire (faute)',
+      'Priorité de réembauchage pendant 4 mois',
+      'Licenciement éco. : plan social obligatoire dès 10 licenc.',
+      'Maladie seule ≠ motif valable de licenciement'
+    ],
+    contact:'Service RH GCA — Délégué CFTC — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── ACCORD NATIONAL GROUPAMA (ANG 1999) ──────────────────
+  {
+    id:26, cat:'rem', emoji:'💶', cat_label:'Rémunération',
+    title:'Indemnité de licenciement ANG : jusqu\'à 7,5 %/an',
+    source:'ANG Groupama 1999 — Art. 46',
+    desc:'L\'ANG va bien au-delà de la CCN : jusqu\'à 7,5 % du salaire annuel par année de présence. Cadres et non-cadres bénéficient de barèmes progressifs distincts. Plafond : 24 mois de salaire.',
+    badge:'Art. 46 ANG',
+    detail:'L\'Accord National Groupama fixe des indemnités de licenciement supérieures à la CCN Assurances. Pour les non-cadres : 4 % jusqu\'à 10 ans, puis 5, 6, 7 et 7,5 % selon l\'ancienneté. Pour les cadres : 4 % jusqu\'à 10 ans, puis 5,5, 6,5, 7 et 7,5 %. Le plafond est fixé à 24 mois de salaire. L\'assiette inclut le salaire maintenu en cas d\'arrêt maladie sur les 12 derniers mois. L\'indemnité de rupture conventionnelle ne peut être inférieure à l\'indemnité de licenciement conventionnelle.',
+    rights:[
+      'Non-cadres : 4 %/an ≤10 ans · 5 % (10-15) · 6 % (15-20) · 7 % (20-26) · 7,5 % au-delà (Art. 46a)',
+      'Cadres : 4 %/an ≤10 ans · 5,5 % (10-15) · 6,5 % (15-20) · 7 % (20-26) · 7,5 % au-delà (Art. 46b)',
+      'Plafond absolu : 24 mois de salaire brut (Art. 46c)',
+      'Assiette : inclut le salaire maintenu en cas d\'arrêt maladie sur les 12 derniers mois (Art. 46c)',
+      'Rupture conventionnelle : indemnité ≥ indemnité de licenciement conventionnelle (Art. 46 bis)',
+      'Préavis non-cadres : 1 mois (< 2 ans), 2 mois (2-10 ans), 3 mois (≥ 10 ans) (Art. 45a)',
+      'Préavis cadres : 3 mois (< 10 ans), 4 mois (≥ 10 ans) (Art. 45b)'
+    ],
+    contact:'Délégué CFTC GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:27, cat:'cong', emoji:'🎉', cat_label:'Congés',
+    title:'Congés événements familiaux & congé anniversaire',
+    source:'ANG Groupama 1999 — Art. 43 & 51',
+    desc:'5 jours pour mariage ou PACS, 4 jours pour naissance, 5 jours pour décès du conjoint. Congé anniversaire : 10 jours ouvrés rémunérés à la 40e année dans le Groupe.',
+    badge:'Art. 43 & 51 ANG',
+    detail:'L\'ANG fixe des congés familiaux plus favorables que la loi. Le congé anniversaire (40 ans dans le Groupe) est une spécificité Groupama : 10 jours ouvrés rémunérés supplémentaires. En cas de décès d\'un proche survenant pendant les congés payés, les jours de congé décès suspendent les congés en cours et ne s\'imputent pas sur ceux-ci. Le terme conjoint couvre le mariage, le PACS et le concubinage.',
+    rights:[
+      'Mariage ou PACS du salarié : 5 jours de travail (Art. 43-1)',
+      'Naissance d\'un enfant : 4 jours (5 jours si naissances multiples) (Art. 43-1)',
+      'Décès du conjoint ou d\'un enfant : 5 jours de travail (Art. 43-1)',
+      'Décès parent, beau-parent : 3 jours · Décès grand-parent, frère/sœur : 2 jours (Art. 43-1)',
+      'Rentrée scolaire : 1 journée/an pour enfant < 7 ans (Art. 43-1)',
+      'Déménagement (changement de résidence) : 2 jours rémunérés (Art. 43-1)',
+      'Décès pendant congés payés : les jours décès suspendent et ne s\'imputent PAS sur les congés (Art. 43-1)',
+      'Congé anniversaire 40 ans dans le Groupe : 10 jours ouvrés rémunérés (Art. 51 — spécificité Groupama)'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:28, cat:'sant', emoji:'🤒', cat_label:'Santé & Prévoyance',
+    title:'Maintien de salaire maladie renforcé (ANG)',
+    source:'ANG Groupama 1999 — Art. 38 & 40',
+    desc:'Maintien à 100 % du salaire net dès le 1er jour, sans jour de carence. ALD : indemnisation jusqu\'à 3 ans. Accident du travail indemnisé jusqu\'à guérison avec réintégration garantie.',
+    badge:'Art. 38 & 40 ANG',
+    detail:'L\'ANG améliore la CCN : aucun jour de carence pour les salariés titularisés. Pour une absence < 4 jours, le maintien est garanti même sans versement d\'IJSS. En cas d\'affection longue durée (ALD), la durée d\'indemnisation passe à 18 mois (2-3 ans d\'ancienneté), 30 mois (3-4 ans) ou 3 ans (> 4 ans). Accident du travail : indemnisation jusqu\'à guérison ou consolidation, avec réintégration garantie.',
+    rights:[
+      'Aucun jour de carence : maintien à 100 % dès le 1er jour d\'arrêt (Art. 38-2d)',
+      'Absence < 4 jours : maintien garanti même sans IJSS versées (Art. 38-2d)',
+      'Durée standard : 3 mois (ancienneté 6 mois-1 an) · 6 mois (≥ 1 an) (Art. 38-2d)',
+      'ALD reconnue : jusqu\'à 3 ans d\'indemnisation si ancienneté ≥ 4 ans (Art. 38-2d)',
+      'Désaccord médical : arbitrage par un 3e médecin, honoraires à la charge de l\'employeur (Art. 38-2c)',
+      'Accident du travail : indemnisation à 100 % jusqu\'à guérison ou consolidation (Art. 40)',
+      'Réintégration garantie après AT/MP dans même poste ou poste similaire (Art. 40)',
+      'Enfant malade < 16 ans : 4 jours rémunérés/an · enfant handicapé < 20 ans : 8 jours/an (Art. 43-1)',
+      '📖 CDT L2314-1 — Composition du CSE : Le comité social et économique comprend l\'employeur et une délégation du personnel comportant un nom…'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:29, cat:'rem', emoji:'🏅', cat_label:'Rémunération',
+    title:'Garanties salariales & primes ANG',
+    source:'ANG Groupama 1999 — Art. 20 à 31',
+    desc:'Mesure collective garantie annuelle. Augmentation individuelle minimale de 51 € (non-cadre) ou 82 € (cadre). Examen obligatoire après 5 ans sans augmentation. 13e mois versé en novembre.',
+    badge:'Art. 20-31 ANG',
+    detail:'L\'ANG instaure des garanties salariales à plusieurs niveaux. Une mesure collective garantie est négociée chaque année au niveau national. Chaque entreprise doit consacrer 0,7 % de la masse salariale aux augmentations individuelles. Tout salarié sans augmentation depuis 5 ans a droit à un examen spécifique de sa situation. Le 13e mois est versé avec la paie de novembre. Les primes familiales et l\'allocation d\'éducation (43 €/enfant/mois) complètent la rémunération.',
+    rights:[
+      'Mesure salariale collective garantie négociée chaque année au niveau national (Art. 20 ANG)',
+      'Enveloppe individuelle obligatoire : 0,7 % de la masse salariale annuelle (Art. 22 ANG)',
+      'Augmentation individuelle minimale : 51 €/mois (non-cadre) · 82 €/mois (cadre) (Art. 21c ANG)',
+      'Passage non-cadre → cadre : garantie minimale de 86 €/mois (Art. 24 ANG)',
+      '5 ans sans augmentation → examen obligatoire de situation + aide si difficultés (Art. 25 ANG)',
+      '13e mois versé avec la paie de novembre · calculé au prorata du temps de travail (Art. 31 ANG)',
+      'Prime de mariage/PACS : 4 % du SMF classe 3 · Prime de naissance : 8 % du SMF classe 3 (Art. 29 ANG)',
+      'Allocation d\'éducation : 43 €/mois/enfant à charge, versée sur 13 mensualités (Art. 30 ANG)'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:30, cat:'repr', emoji:'🛡️', cat_label:'Représentation syndicale',
+    title:'Garanties des représentants du personnel (ANG)',
+    source:'ANG Groupama 1999 — Art. 11 & 12',
+    desc:'Aucun impact du mandat sur carrière ni rémunération. Après 3 ans sans augmentation, le délégué reçoit la moyenne de sa classe. Protection contre le licenciement pendant le mandat + 12 mois.',
+    badge:'Art. 11 & 12 ANG',
+    detail:'L\'ANG garantit aux représentants du personnel une évolution salariale et professionnelle non discriminée. Après 3 ans sans augmentation individuelle, le salarié investi reçoit au moins la moyenne des augmentations de sa classe. Pour les mandatés à ≥ 50 % de leur temps, les objectifs commerciaux sont proratisés sans perte de rémunération variable. Un entretien annuel dédié concilie mandat et activité professionnelle.',
+    rights:[
+      'Principe de non-discrimination absolu : mandat sans impact sur carrière, rémunération, formation (Art. 11-2)',
+      '< 50 % du temps en mandat : 3 ans sans augmentation → attribution de la moyenne de la classe (Art. 11-3a)',
+      '≥ 50 % du temps en mandat : même garantie d\'évolution salariale triennale (Art. 11-3a)',
+      'Objectifs commerciaux proratisés : rémunération variable = celle d\'un temps plein si objectifs atteints (Art. 11-4)',
+      'Entretien annuel individuel obligatoire sur la conciliation mandat/contrat (Art. 11-3)',
+      'Protection légale contre le licenciement pendant tout le mandat + 12 mois après (Art. 11-6)',
+      'VAE facilitée par la DRH à l\'issue du mandat (Art. 11-7)',
+      '5 jours/an de congé pour instances syndicales statutaires, avec maintien de salaire (Art. 12-4 ANG)'
+    ],
+    contact:'Délégué CFTC GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+  {
+    id:34, cat:'repr', emoji:'⚖️', cat_label:'Représentation syndicale',
+    title:'Hiérarchie des normes sociales',
+    source:'CDT',
+    desc:'Comprendre quelle règle s\'applique : loi, convention collective, accord de groupe, accord d\'entreprise ou contrat de travail. Le principe de faveur protège le salarié.',
+    badge:'Fondamental',
+    detail:'La hiérarchie des normes détermine quelle règle prime lorsque plusieurs textes s\'appliquent à une même situation. En droit social, on distingue 5 niveaux : la loi (Code du travail), la convention collective nationale (CCN), l\'accord de groupe, l\'accord d\'entreprise, et le contrat de travail individuel. La règle générale est le <strong>principe de faveur</strong> : la norme inférieure peut toujours améliorer la norme supérieure, mais jamais la réduire — sauf si la loi l\'autorise expressément (principe de supplétivité). Depuis les réformes 2016-2017 (Loi El Khomri, Ordonnances Macron), certaines matières sont désormais <strong>d\'ordre public</strong> (la loi prime toujours), d\'autres sont ouvertes à la négociation d\'entreprise, parfois même en deçà de la CCN.',
+    rights:[
+      '1️⃣ Loi & Code du travail : socle minimal absolu — nul accord ne peut y déroger en défaveur',
+      '2️⃣ Convention Collective Nationale (CCN Assurances 1992) : complète la loi pour toute la branche',
+      '3️⃣ Accord National Groupama (ANG 1999) : s\'applique à tout le Groupe Groupama — améliore la CCN',
+      '4️⃣ Accord d\'entreprise GCA (ex. AH-2001, Télétravail, Égalité…) : améliore la CCN et l\'ANG',
+      '5️⃣ Contrat de travail individuel : toujours au moins égal à l\'accord d\'entreprise',
+      '✅ Principe de faveur : la norme inférieure peut améliorer la supérieure, jamais la réduire',
+      '⚠️ Exceptions (Ord. Macron 2017) : certains accords d\'entreprise peuvent déroger à la CCN (durée du travail, congés…)',
+      '🔑 Matières d\'ordre public absolu : SMIC, durée légale 35h, congés maternité, libertés fondamentales',
+      '🔑 Matières supplétives : si pas d\'accord, la loi s\'applique — un accord peut y déroger dans les deux sens',
+      '🔑 Matières ouvertes à la négociation d\'entreprise primant la branche : durée du travail, astreintes, repos…',
+      '📖 CDT L2251-1 — Principe de faveur : Une convention ou un accord peut comporter des stipulations plus favorables aux salariés…',
+      '📖 CDT L2253-1 — Primauté de l\'accord d\'entreprise sur certaines matières : Dans les matières définies…'
+    ],
+    contact:'Délégué CFTC GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  {
+    id:31, cat:'cong', emoji:'🕐', cat_label:'Congés',
+    title:'Congés sans solde & absences exceptionnelles',
+    source:'ANG Groupama 1999 — Art. 43-2',
+    desc:'Jusqu\'à 6 mois de congé sans solde après 1 an d\'ancienneté. Congé de proche aidant indemnisé à 50 % du salaire pendant 2 mois. Don de jours de repos entre collègues autorisé.',
+    badge:'Art. 43-2 ANG',
+    detail:'L\'ANG prévoit plusieurs dispositifs d\'absence exceptionnelle. Le congé sans solde pour convenance personnelle (jusqu\'à 6 mois, après 1 an d\'ancienneté) doit être demandé 2 mois à l\'avance. Un congé de proche aidant, de présence parentale ou de solidarité familiale est indemnisé à 50 % du salaire pendant 2 mois maximum. Le don de jours de repos entre salariés est ouvert aux CDI et CDD.',
+    rights:[
+      'Congé sans solde personnel : jusqu\'à 6 mois · ancienneté ≥ 1 an · demande 2 mois à l\'avance (Art. 43-2a)',
+      'Congé sans solde exceptionnel : 5 jours/an maxi, sans condition d\'ancienneté (Art. 43-2b)',
+      'Congé proche aidant / présence parentale / solidarité familiale : 50 % du salaire pendant 2 mois max (Art. 43-2c)',
+      'Indemnisation cumulable pour personnes différentes (Art. 43-2c)',
+      'Don de jours de repos : ouvert à tous (CDI et CDD) pour proche gravement malade ou handicapé (Art. 43-2d)',
+      'Dons anonymes et sans contrepartie (Art. 43-2d)',
+      'Maternité : prolongation possible de 2 mois supplémentaires indemnisés à 50 % (Art. 42a ANG)'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── INTÉRESSEMENT ──────────────────────────────────────────────
+  {
+    id:32, cat:'avantages', emoji:'💹', cat_label:'Intéressement',
+    title:'Prime d\'intéressement 2025-2026',
+    source:'Accord d\'intéressement GCA — 05/06/2025',
+    desc:'Prime collective versée au plus tard fin mai selon 4 critères : satisfaction client, ratio combiné, fidélisation des salariés et réduction énergétique. Plancher garanti à 5% de la masse salariale.',
+    badge:'Accord 2025-2026',
+    detail:'L\'accord d\'intéressement signé le 05/06/2025 couvre les exercices 2025 et 2026. Il associe l\'ensemble des salariés (ancienneté ≥ 3 mois) aux performances de l\'entreprise autour de 4 indicateurs tirés du projet \"Réussir tous ensemble 2024-2028\". L\'enveloppe globale est encadrée par un plancher de 5% et un plafond de 8% de la masse salariale brute, et ne peut dépasser 28% du résultat social net.',
+    rights:[
+      'Bénéficiaires : tous les salariés avec ≥ 3 mois d\'ancienneté, présents dans l\'exercice (Art. 6a)',
+      'Versement au plus tard fin mai de l\'année suivant l\'exercice (Art. 6c)',
+      'Plancher garanti : 5% de la masse salariale brute (si résultat positif) (Art. 3)',
+      'Plafond : 8% de la MSB et 28% du résultat social net (Art. 3)',
+      'Répartition : 50% en part fixe (prorata présence) + 50% en part variable (prorata salaire) (Art. 6b)',
+      'Critère 1 — Expérience client : solde net de clients IARD (jusqu\'à 1 600 000 €/an si +2000 sociétaires) (Art. 4.1)',
+      'Critère 1 bis — Satisfaction : enquêtes à chaud (jusqu\'à 600 000 €/an si taux ≥ 69%) (Art. 4.1)',
+      'Critère 2 — Performance économique : ratio combiné social (jusqu\'à 2 800 000 €/an si ratio ≤ 98,5%) (Art. 4.2)',
+      'Critère 3 — Mobilisation : taux de fidélisation CDI (jusqu\'à 600 000 €/an si taux ≥ 94%) (Art. 4.3)',
+      'Critère 4 — Responsabilité environnementale : réduction consommation énergétique (jusqu\'à 800 000 €/an si ≥7%) (Art. 4.4)',
+      'Congés maternité, paternité, adoption, accidents du travail et heures de mandat = périodes de présence (Art. 6b)',
+      'Choix du salarié : versement direct ou placement sur PERCOL-I / PEE avec abondement Groupe (Art. 5)',
+      'PEE : abondement de 50% du versement → jusqu\'à 500 € d\'abondement pour 1 000 € versés',
+      'PERCO : abondement jusqu\'à 800 € d\'abondement pour 1 200 € versés (100% sur les 400 premiers €)',
+      'Exonération de cotisations sociales (hors CSG/CRDS) — défiscalisation si placé sur PEE/PERCOL-I',
+      'Bénéfice exceptionnel > 25 M€ : ouverture obligatoire d\'une négociation de partage de valeur (Art. 7)',
+      '📖 CDT L3311-1 — Champ d\'application de l\'intéressement : Les dispositions du présent titre sont applicables aux employeurs de droit privé ainsi qu\'à leurs sa…',
+      '📖 CDT L3312-1 — Objet de l\'intéressement : L\'intéressement a pour objet d\'associer collectivement les salariés aux résultats ou aux performance…',
+      '📖 CDT L3314-8 — Plafonnement individuel et collectif : Le montant global des primes distribuées aux bénéficiaires ne doit pas dépasser annuellement 20 % du…'
+    ],
+    contact:'Délégués CFTC GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  },
+
+  // ── ÉPARGNE SALARIALE ──────────────────────────────────────────
+  {
+    id:33, cat:'avantages', emoji:'🏦', cat_label:'Épargne salariale',
+    title:'Abondement PEE & PERCO — Épargne salariale',
+    source:'Règlement PEE / PERCO — Groupe Groupama',
+    desc:'L\'entreprise abonde vos versements sur le PEE (jusqu\'à 500 €) et le PERCO (jusqu\'à 800 €). La 1ère année sur le PERCO, l\'abondement est doublé : 200% sur les 400 premiers euros versés.',
+    badge:'Épargne Groupe',
+    detail:'Le Groupe Groupama propose deux dispositifs d\'épargne salariale abondés : le PEE (Plan d\'Épargne Entreprise) pour une épargne à moyen terme, et le PERCO pour préparer la retraite. Les sommes issues de la participation, de l\'intéressement, des versements libres ou d\'un transfert CET sont éligibles à l\'abondement, calculé chaque trimestre.',
+    rights:[
+      '── PEE (Plan d\'Épargne Entreprise) ──',
+      'Abondement PEE : 50% de vos versements, plafonné à 500 € d\'abondement par an',
+      'Pour obtenir le maximum : versez 1 000 € → l\'entreprise ajoute 500 € (total 1 500 €)',
+      '── PERCO (Plan d\'Épargne Retraite Collectif) ──',
+      'Abondement PERCO — tranche 1 : 100% sur les 400 premiers euros versés → 400 € d\'abondement',
+      'Abondement PERCO — tranche 2 : 50% de 400 € à 1 200 € versés → 400 € d\'abondement supplémentaires',
+      'Abondement PERCO maximum : 800 € par an pour un versement de 1 200 €',
+      '1ère année PERCO — bonus : 200% sur les 400 premiers euros → 800 € pour seulement 400 € versés !',
+      'Sommes éligibles : participation, intéressement, versements libres, transfert CET',
+      'Abondement calculé trimestriellement en fonction des versements du trimestre',
+      'Exonération d\'impôt sur le revenu et de cotisations sociales (hors CSG/CRDS)',
+      '📖 CDT L3332-1 — Objet du Plan d\'Épargne Entreprise : Le plan d\'épargne d\'entreprise est un système d\'épargne collectif ouvrant aux salariés de l\'entrepri…'
+    ],
+    contact:'Service RH GCA — <a href="mailto:cftc@groupama-ca.fr" style="color:#F5C400;font-weight:800;">cftc@groupama-ca.fr</a>'
+  }
+];
+
+// ═══════════════════════════════════════════════════════
+let currentCat = 'all';
+
+function setFilter(cat, btn) {
+  currentCat = cat;
+  document.querySelectorAll('#topNav button').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  render();
+}
+
+function setFilterPill(cat, el) {
+  currentCat = cat;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  render();
+}
+
+function render() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const filtered = data.filter(d => {
+    const matchCat = currentCat === 'all' || d.cat === currentCat;
+    const matchQ   = !q || d.title.toLowerCase().includes(q) || d.desc.toLowerCase().includes(q);
+    return matchCat && matchQ;
+  });
+
+  document.getElementById('gridLabel').textContent =
+    filtered.length === 0 ? '' : `${filtered.length} droit${filtered.length > 1 ? 's' : ''} trouvé${filtered.length > 1 ? 's' : ''}`;
+
+  const grid = document.getElementById('cardsGrid');
+  if (filtered.length === 0) {
+    grid.innerHTML = `<div class="empty">😕 Aucun résultat pour "<strong>${q}</strong>"<br><span style="font-size:15px;font-weight:600;">Essayez un autre mot.</span></div>`;
+    return;
+  }
+
+  const colors = { rem:'#F5C400,#7a5e00', cong:'#93c6ff,#004a8f', sant:'#a8f0c6,#0a6640', form:'#d5b4f7,#5a1a99', repr:'#ffb4b4,#8a0000', trav:'#b4ecf7,#005a72', avantages:'#ffd6a5,#7a3a00' };
+
+  grid.innerHTML = filtered.map((d, i) => `
+    <div class="card" data-cat="${d.cat}" style="animation-delay:${i*40}ms" onclick="openModal(${d.id})">
+      <span class="card-source">${d.source}</span>
+      <div class="card-top">
+        <div class="card-emoji">${d.emoji}</div>
+        <div class="card-info">
+          <div class="card-cat">${d.cat_label}</div>
+          <h3>${d.title}</h3>
+        </div>
+      </div>
+      <p class="card-desc">${d.desc}</p>
+      <div class="card-footer">
+        <span class="card-cta">👉 Lire mes droits <span>→</span></span>
+        <span class="card-badge">${d.badge}</span>
+      </div>
+    </div>`).join('');
+}
+
+function openModal(id) {
+  const d = data.find(x => x.id === id);
+  const colors = { rem:'#F5C400,#7a5e00', cong:'#93c6ff,#004a8f', sant:'#a8f0c6,#0a6640', form:'#d5b4f7,#5a1a99', repr:'#ffb4b4,#8a0000', trav:'#b4ecf7,#005a72', avantages:'#ffd6a5,#7a3a00' };
+  const [bg, fg] = (colors[d.cat] || '#ddd,#333').split(',');
+  const simulatorHTML = id === 33 ? `
+  <div class="simu-wrap">
+    <div class="simu-title">🧮 Simulateur — Calculez votre abondement</div>
+    <div class="simu-tabs">
+      <button class="simu-tab active" onclick="simuSwitch('pee',this)">💼 PEE</button>
+      <button class="simu-tab" onclick="simuSwitch('perco',this)">🏦 PERCO</button>
+      <button class="simu-tab" onclick="simuSwitch('perco1',this)">⭐ PERCO 1ère année</button>
+    </div>
+    <div class="simu-slider-wrap">
+      <div class="simu-slider-label"><span>Montant que vous versez</span><strong id="simuVal">500 €</strong></div>
+      <input type="range" class="simu-range" id="simuRange" min="0" max="1000" step="50" value="500" oninput="simuUpdate(this.value)">
+    </div>
+    <div class="simu-result" id="simuResult"></div>
+    <div class="simu-optim" id="simuOptim"></div>
+    <p class="simu-note">ℹ️ Abondement calculé chaque trimestre. Montants annuels donnés à titre indicatif.</p>
+  </div>` : id === 34 ? `
+  <div class="pyramid-wrap">
+    <div style="font-size:11px;font-weight:800;color:var(--gray);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;">🏛️ Pyramide des normes — du plus fort au plus faible</div>
+    <div class="pyramid-level pyr-1"><span class="pnum">1</span><div><div>Loi &amp; Code du travail</div><div class="pyr-sub">Ordre public absolu — SMIC, durée légale, maternité…</div></div></div>
+    <div class="pyramid-level pyr-2"><span class="pnum">2</span><div><div>CCN Assurances 1992</div><div class="pyr-sub">Convention de branche — complète et améliore la loi</div></div></div>
+    <div class="pyramid-level pyr-3"><span class="pnum">3</span><div><div>Accord National Groupama 1999</div><div class="pyr-sub">Accord de groupe — améliore la CCN pour tout Groupama</div></div></div>
+    <div class="pyramid-level pyr-4"><span class="pnum">4</span><div><div>Accords d'entreprise GCA</div><div class="pyr-sub">AH-2001, Télétravail, Égalité, GEPP… — spécifiques à GCA</div></div></div>
+    <div class="pyramid-level pyr-5"><span class="pnum">5</span><div><div>Contrat de travail individuel</div><div class="pyr-sub">Toujours ≥ accord d'entreprise — jamais en deçà</div></div></div>
+    <div style="background:#fff3cd;border-radius:12px;padding:12px 16px;font-size:15px;font-weight:700;color:#7a4000;margin-top:12px;line-height:1.5;">⚠️ Depuis 2017 (réformes Macron), certains accords d'entreprise peuvent s'écarter de la CCN. La CFTC vérifie que tout accord signé chez GCA reste favorable aux salariés.</div>
+  </div>` : '';
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-tag" style="background:${bg}33;color:${fg}">${d.emoji} ${d.cat_label}</div>
+    <span class="modal-source">📄 ${d.source}</span>
+    <h2>${d.title}</h2>
+    <div style="background:#e8f4ff;border-radius:12px;padding:14px 18px;margin-bottom:16px;border-left:5px solid var(--blue2);">
+      <p style="font-size:16px;font-weight:700;color:#1a2a4a;line-height:1.6;margin:0;">📌 <strong>En résumé :</strong> ${d.desc}</p>
+    </div>
+    <p class="modal-intro">${d.detail}</p>
+    <h4>✅ Ce à quoi vous avez droit</h4>
+    <ul class="rights-list">
+      ${d.rights.map(r=>`<li class="${r.startsWith('📖') ? 'cdt-ref' : ''}">${r}</li>`).join('')}
+    </ul>
+    ${simulatorHTML}
+    <div class="contact-card">
+      <div class="ico">📞</div>
+      <div>
+        <strong>Qui contacter ?</strong>
+        <span>${d.contact}</span>
+      </div>
+    </div>`;
+  if (id === 33) { simuInit(); }
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) { if(e.target===document.getElementById('overlay')) closeModalDirect(); }
+function closeModalDirect() {
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ═══════════════════════════════════════════════════════
+// SIMULATEUR ABONDEMENT PEE / PERCO
+// ═══════════════════════════════════════════════════════
+let simuMode = 'pee';
+
+function calcAbondement(versement, mode) {
+  if (mode === 'pee') {
+    const ab = Math.min(versement * 0.5, 500);
+    return { abondement: Math.round(ab), total: Math.round(versement + ab) };
+  } else if (mode === 'perco') {
+    const t1 = Math.min(versement, 400) * 1.0;
+    const t2 = Math.max(0, Math.min(versement - 400, 800)) * 0.5;
+    const ab = Math.round(t1 + t2);
+    return { abondement: ab, total: Math.round(versement + ab) };
+  } else {
+    const t1 = Math.min(versement, 400) * 2.0;
+    const t2 = Math.max(0, Math.min(versement - 400, 800)) * 0.5;
+    const ab = Math.round(Math.min(t1 + t2, 800));
+    return { abondement: ab, total: Math.round(versement + ab) };
+  }
+}
+
+function fmt(n) { return n.toLocaleString('fr-FR') + ' €'; }
+
+function simuRenderResult(versement) {
+  const r = calcAbondement(versement, simuMode);
+  document.getElementById('simuResult').innerHTML = `
+    <div class="simu-result-item"><span class="val">${fmt(versement)}</span><span class="lbl">Vous versez</span></div>
+    <div class="simu-result-item"><span class="val">${fmt(r.abondement)}</span><span class="lbl">GCA ajoute</span></div>
+    <div class="simu-result-item highlight"><span class="val">${fmt(r.total)}</span><span class="lbl">Total épargné</span></div>`;
+  const steps = simuMode === 'pee' ? [0,200,400,600,800,1000] : [0,200,400,600,800,1000,1200];
+  let bestIdx = 0, bestRatio = -1;
+  steps.forEach((s, i) => { if (s===0) return; const {abondement} = calcAbondement(s, simuMode); const ratio = abondement/s; if (ratio > bestRatio) { bestRatio=ratio; bestIdx=i; } });
+  const rows = steps.map((s,i) => {
+    const {abondement, total} = calcAbondement(s, simuMode);
+    const ratio = s > 0 ? Math.round(abondement/s*100) : 0;
+    const isBest = (i===bestIdx && s>0);
+    const isCurrent = s===versement;
+    return `<tr class="${isBest?'best':''}"><td>${isBest?'<span class="star">★</span>':''}${fmt(s)}${isCurrent?' ◀':''}</td><td>${fmt(abondement)}</td><td>${ratio}%</td><td><strong>${fmt(total)}</strong></td></tr>`;
+  }).join('');
+  document.getElementById('simuOptim').innerHTML = `
+    <div class="simu-optim-title">📊 Tableau — Comparez les montants selon votre versement</div>
+    <table class="simu-table"><thead><tr><th>Votre versement</th><th>Abondement reçu</th><th>Rendement</th><th>Total épargné</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function simuUpdate(val) {
+  const v = parseInt(val);
+  document.getElementById('simuVal').textContent = fmt(v);
+  const range = document.getElementById('simuRange');
+  range.style.setProperty('--pct', (v / parseInt(range.max) * 100) + '%');
+  simuRenderResult(v);
+}
+
+function simuSwitch(mode, btn) {
+  simuMode = mode;
+  document.querySelectorAll('.simu-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const range = document.getElementById('simuRange');
+  range.max = (mode === 'pee') ? 1000 : 1200;
+  if (parseInt(range.value) > parseInt(range.max)) range.value = range.max;
+  simuUpdate(range.value);
+}
+
+function simuInit() { simuMode = 'pee'; setTimeout(() => simuUpdate(500), 0); }
+render();
+</script>
+</body>
+</html>
